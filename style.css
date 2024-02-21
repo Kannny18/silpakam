@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(215, 227, 250);
+}
+.box-map {
+    margin-top: 5rem;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 780px;
+    height: 650px;
+}
+.box-map > h2 {
+    padding: 1rem 0;
+}
+
+.map {
+    width: 650px;
+    height: 500px;
+    margin: 2rem;
+}
+.location {
+    margin: 1rem 0;
+}

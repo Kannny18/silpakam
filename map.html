@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>map Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+
+
+    	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+	
+ 
+	
+</head>
+<body>
+
+	<div class="box-map">
+		<h2>แผนที่</h2>
+		<div class="seach">
+			<input type="text" id="input-search">
+			<button type="button" class="bth-search" id="bth-search">กดค้นหา</button>
+		</div>
+		<div class="location">
+			<label for="latitude">
+				<span>ละติจูด :</span>
+				<input type="text" name="latitude" id="latitude" disabled placeholder="0">
+			</label>
+			<label for="longitude">
+				<span>ลองจิจูด :</span>
+				<input type="text" name="longitude" id="longitude" disabled placeholder="0">
+			</label>
+		</div>
+		
+		
+		<div class="map" id="map"></div>
+	
+		 </div>
+	</div>
+
+<div id="mapid" style="width: 1000px; height: 1000px;"></div>
+<script src="script.js"></script>
+<script src="style.css"></script>
+<script src="tourpoint.js"></script>
+<script>
+var map = L.map("mapid").setView([13.63295258979151, 100.75565341514103], 8);
+
+
+     
+     var osm = L.tileLayer(
+         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+         ).addTo(map);
+    var gsat = L.tileLayer(
+         "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+         ).addTo(map);
+
+     var baseMaps = {
+         OSM: osm,
+         GoogleSat: gsat,
+     };
+     L.control.layers(baseMaps).addTo(map);
+     var tourLayer = L.geoJSON(tourpoint, {
+         pointToLayer: function (feature, latlng) {
+             return L.marker(latlng).bindPopup(feature.properties.join_cultu);
+ },
+ onEachFeature: function (feature, layer) {
+     layer.on("mouseover", function () {
+             document
+        .getElementById(feature.properties.join_cultu)
+ .classList.add("w3-red");
+ });
+ 
+ layer.on("mouseout", function () {
+ document
+ .getElementById(feature.properties.join_cultu)
+ .classList.remove("w3-red");
+ });
+ },
+ }).addTo(map);
+ var cont = "";
+cont += "<table class='w3-table w3-striped'>";
+cont += "<tr>";
+cont += "<th>id</th>";
+cont += "<th>geom</th>";
+cont += "<th>xuid_</th>";
+cont += "<th>id_613</th>";
+cont += "<th>name613</th>";
+cont += "<th>name650</th>";
+cont += "<th>important</th>";
+cont += "<th>pk</th>";
+cont += "<th>province</th>";
+cont +="<th>amphur</th>";
+cont +="<th>tambon</th>";
+cont +="<th>code</th>";
+cont +="<th>x</th>";
+cont +="<th>y</th>";
+cont +="<th>setting_en</th>";
+cont +="<th>function</th>";
+cont +="<th>cultural</th>";
+cont +="<th>sett_id</th>";
+cont +="<th> fun_id</th>";
+cont +="<th> landmark</th>";
+cont +="<th> region</th>";
+cont +="<th>province_h </th>";
+cont +="<th>date_prov </th>";
+cont +="<th>register_6 </th>";
+cont += "<th>join_name6</th>";
+cont += "<th>join_amphu</th>";
+cont += "<th>join_tambon</th>";
+cont += "<th>join_x</th>";
+cont += "<th>join_y</th>";
+cont += "<th>join_sett</th>";
+cont += "<th>join_cultu</th>";
+cont += "<th>join_landm</th>";
+cont += "<th>join_regio</th>";
+cont += "<th>join_pro_1</th>";
+cont += "<th>join_date_</th>";
+cont += "<th>join_regis</th>";
+cont += "<th>join_lat</th>";
+cont += "<th>join_long</th>";
+ cont += "</tr>";
+ 
+ for (let i in tourpoint.features) {
+ cont += "<tr id=" + tourpoint.features[i].properties.fid + ">";
+ cont += "<td>" + tourpoint.features[i].properties.fid + "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.cat + "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. xuid_+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. id_613+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. name613+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. name650+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. important+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. pk+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. province+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. amphur+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. tambon+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. code+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. x+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. y+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. setting_en+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. function+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. cultural+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.sett_id + "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. fun_id+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.andmark+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. region+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.province_h+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.date_prov + "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.register_6 + "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.join_name6+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. join_amphu+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.join_tambo + "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.join_x+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.join_y + "</td>";
+ cont += "<td>" + tourpoint.features[i].properties. join_sett+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.join_cultu+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.join_landm + "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.join_regio + "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.join_pro_1+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.join_date_ + "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.join_regis+ "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.join_lat + "</td>";
+ cont += "<td>" + tourpoint.features[i].properties.join_long + "</td>";
+ cont += "</tr>";
+ }
+ cont += "</table>";
+ console.log(cont);
+ document.getElementById("content").innerHTML = cont;
+	
+
+</script>
+
+
+</body>
+</html>
+
+</body>
+</html>

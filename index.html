@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta htpp-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewpost"content = "width=device-width,initial-scale">
+    <title> My leaflet map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+ integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+ crossorigin="" />
+ 
+ <!-- W3 CSS template -->
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+ 
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+ <style>
+ #mapid {
+ height: 800px;
+ }
+ </style>
+ 
+</head>
+<body>
+    <body>
+
+        <div class="w3-row">
+            <div id="mapid" class="w3-half"></div>
+            <div id="content" class="w3-half">   
+            </div>
+        </div>
+        
+      <!-- link geojson file -->
+    
+     
+      
+     
+    <!-- Map control -->
+    
+    
+    <script>
+  
+    var map = L.map("mapid").setView([13.63295258979151, 100.75565341514103], 8);
+     
+     var osm = L.tileLayer(
+         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+         ).addTo(map);
+    var gsat = L.tileLayer(
+         "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+         ).addTo(map);
+
+     var baseMaps = {
+         OSM: osm,
+         GoogleSat: gsat,
+     };
+     L.control.layers(baseMaps,).addTo(map);
+  
+
+     
+
+    
+   
+    
+    </script>
+
+</body>
+</html>
