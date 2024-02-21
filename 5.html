@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta htpp-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewpost"content = "width=device-width,initial-scale">
+    <title> เเหล่งศิลปกรรมเเละย่านชุมชนเก่า</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+ integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+ crossorigin="" />
+ <link rel="stylesheet" href="5.css"/>
+ 
+ <!-- W3 CSS template -->
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+ 
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+ <div class="container bg">
+  <div class="navBar">
+    <div class="logo">
+      <a href="#">
+        <i class="fa-light fa-location-arrow"></i>
+      </a>
+    </div>
+    <ul>
+      <li><a href="self.html">Home</a></li>
+      <li><a href="5.html">เเหล่งศิลปกรรมเเละย่านชุมชมเก่า</a></li>
+      <li><a href="6.html">ตารางข้อมูลเเหล่งศิลปกรรม</a></li>
+      <li><a href="Greentable.htmL">ตารางข้อมูลเเสดงพื้นที่สีเขียวทั้งประเทศไทย</a></li>
+      <li><a href="Created.html">ข้อมูลติดต่อ</a></li>
+    </ul>
+  </div>
+
+ <style>
+ 
+  #mapid {
+  height: 500px;
+  width: 100%;
+  }
+
+  </style>
+
+    
+  </head> 
+  
+  <body>
+    
+    <div class="w3-row">
+      <div id="mapid" class="w3-half"></div>
+      <div id="content" class="w3-half">   
+      </div>
+      
+  </div>
+
+  <!-- <body bgcolor="BFACE2">
+    <h1 id="heading"><b><i>PHI THA KHON</i></b></h1>
+    <br>
+    <p>Dan sai District Loei Province</p>
+    <hr>
+</body> --> 
+
+
+<script>
+    var map = L.map("mapid").setView([13.63295258979151, 100.75565341514103], 8);
+     
+     var osm = L.tileLayer(
+         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+         ).addTo(map);
+    var gsat = L.tileLayer(
+         "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+         ).addTo(map);
+    var wmsLayer1 = L.tileLayer.wms("http://localhost:8080/geoserver/ne/wms?", {
+        layers: '		ne:silpakam_point	',
+        format: 'image/png',
+        transparent: true
+        }).addTo(map);
+    var wmsLayer2 = L.tileLayer.wms("http://localhost:8080/geoserver/ne/wms?", {
+        layers: '		ne:ocd_635_original	',
+        format: 'image/png',
+        transparent: true
+        }).addTo(map);
+     var baseMaps = {
+         OSM: osm,
+         GoogleSat: gsat
+       
+        
+     };
+     var overlays = {wmsLayer1,wmsLayer2}
+     L.control.layers(baseMaps,overlays).addTo(map);
+     
+
+
+    </script>
+    
+</html>

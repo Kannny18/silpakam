@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Greentable.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    
+
+  <style>
+			table{
+			border-collapse: collapse;
+			width: 50%;
+			}
+			th, td{
+			text-align: left;
+			padding: 8px;
+			}
+			tr:nth-child(even){
+			background-color: #e6faff;
+			}
+			th{
+			background-color: #dadada;
+			color: rgb(0, 0, 0);
+			
+			}
+			td, th {
+  border: 1px solid #694040;
+  padding: 0.5rem;
+}
+			
+			</style>
+        
+  <style>
+    body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+    }
+    h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }  
+    .jumbotron {
+      background-color: #043cf5;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+    }
+    .container-fluid {
+      background-color: #ebe3fd;
+      color: #000000;
+      padding: 100px 25px;
+     
+   
+
+    }
+    
+    .bg-grey {
+      background-color: #ffe1e1;
+    }
+    .logo-small {
+      color: #3b67f5;
+      font-size: 50px;
+    }
+    .logo {
+      color: #e6eaf0;
+      font-size: 200px;
+    }
+    .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+    }
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+    }
+    .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #1ec9f4;
+    }
+    .carousel-indicators li {
+      border-color: #f4511e;
+    }
+    .carousel-indicators li.active {
+      background-color: #f4511e;
+    }
+    .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+    }
+    .item span {
+      font-style: normal;
+    }
+    .panel {
+      border: 1px solid #f4511e; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+    }
+    .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+    }
+    .panel-footer .btn:hover {
+      border: 1px solid #f4511e;
+      background-color: #fff !important;
+      color: #f4511e;
+    }
+    .panel-heading {
+      color: #fff !important;
+      background-color: #f4511e !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+    .panel-footer {
+      background-color: white !important;
+    }
+    .panel-footer h3 {
+      font-size: 32px;
+    }
+    .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+    }
+    .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #1a82e2;
+      color: #fff;
+    }
+    .navbar {
+      margin-bottom: 0;
+      background-color: #87bcee;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+    }
+    .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+    }
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #f4511e !important;
+      background-color: #fff !important;
+    }
+    .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+    }
+    footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #f4511e;
+    }
+    .slideanim {visibility:hidden;}
+    .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+    }
+    @keyframes slide {
+      0% {
+        opacity: 0;
+        transform: translateY(70%);
+      } 
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+    @-webkit-keyframes slide {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+      } 
+      100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+      .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .logo {
+        font-size: 150px;
+      }
+    }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="self.html">Home</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="5.html">เเหล่งศิลปกรรมเเละย่านชุมชมเก่า</a></li>
+          <li><a href="6.html">เเหล่งศิลปกรรม</a></li>
+          <li><a href="Greentable.html">พื้นที่สีเขียวทั้งประเทศไทย</a></li>
+          <li><a href="Created.html">ข้อมูลติดต่อ</a></li>
+    
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="jumbotron text-center">
+    <h1><b><center>ตารางข้อมูลเเสดงพื้นที่สีเขียวทั้งประเทศไทย </center></b></h1> 
+  </div>
+  
+<center>
+<table>
+<tr><th>province</th><th>tambon</th><th>amphur</th><th>พื้นที่สีเขียว</th><th>พื้นที่ที่ไม่มีพื้นที่สีเขียว</th><th>รวมพื้นที่สีเขียวเเละไม่ใช่พื้นที่สีเขียวทั้งหมด</th><th>พื้นที่สีเขียวร้อยละ</th><th>พื้นที่ไม่มีสีเขียวร้อยละ</th><th>เช็คความถูกต้อง</th></tr>
+<tr><td>ปัตตานี</td><td>สะบารัง</td><td>เมืองปัตตานี</td><td>14</td><td>10842</td><td>10856</td><td>0.00129</td><td>0.99871</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>ตลาด</td><td>เมืองสุราษฎร์ธานี</td><td>8</td><td>1422</td><td>1430</td><td>0.005594</td><td>0.994406</td><td>1</td></tr>
+<tr><td>สงขลา</td><td>บ่อยาง</td><td>เมืองสงขลา</td><td>15</td><td>2592</td><td>2607</td><td>0.005754</td><td>0.994246</td><td>1</td></tr>
+<tr><td>น่าน</td><td>แม่ขะนิง</td><td>เวียงสา</td><td>43</td><td>3328</td><td>3371</td><td>0.012756</td><td>0.987244</td><td>1</td></tr>
+<tr><td>นครศรีธรรมราช</td><td>สิชล</td><td>ขนอม</td><td>162</td><td>10573</td><td>10735</td><td>0.015091</td><td>0.984909</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>ทุ่งยาว</td><td>เมืองยะลา</td><td>59</td><td>2535</td><td>2594</td><td>0.022745</td><td>0.977255</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>ท่าทองใหม่</td><td>กาญจนดิษฐ์</td><td>38</td><td>868</td><td>906</td><td>0.041943</td><td>0.958057</td><td>1</td></tr>
+<tr><td>ประจวบคีรีขันธ์</td><td>หัวหิน</td><td>หัวหิน</td><td>264</td><td>5185</td><td>5449</td><td>0.048449</td><td>0.951551</td><td>1</td></tr>
+<tr><td>ปทุมธานี</td><td>ประชาธิปัตย์</td><td>ธัญบุรี</td><td>42</td><td>765</td><td>807</td><td>0.052045</td><td>0.947955</td><td>1</td></tr>
+<tr><td>ชุมพร</td><td>หลังสวน</td><td>หลังสวน</td><td>26</td><td>422</td><td>448</td><td>0.058036</td><td>0.941964</td><td>1</td></tr>
+<tr><td>ชุมพร</td><td>นาโพธิ์</td><td>สวี</td><td>91</td><td>1463</td><td>1554</td><td>0.058559</td><td>0.941441</td><td>1</td></tr>
+<tr><td>ชลบุรี</td><td>สัตหีบ</td><td>สัตหีบ</td><td>613</td><td>9086</td><td>9699</td><td>0.063202</td><td>0.936798</td><td>1</td></tr>
+<tr><td>ฉะเชิงเทรา</td><td>เทพราช</td><td>บ้านโพธิ์</td><td>6</td><td>85</td><td>91</td><td>0.065934</td><td>0.934066</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>ช้างม่อย</td><td>เมืองเชียงใหม่</td><td>85</td><td>1185</td><td>1270</td><td>0.066929</td><td>0.933071</td><td>1</td></tr>
+<tr><td>นครสวรรค์</td><td>ปากน้ำโพ</td><td>เมืองนครสวรรค์</td><td>480</td><td>6682</td><td>7162</td><td>0.06702</td><td>0.93298</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>บางชนะ</td><td>เมืองสุราษฎร์ธานี</td><td>91</td><td>1149</td><td>1240</td><td>0.073387</td><td>0.926613</td><td>1</td></tr>
+<tr><td>อุทัยธานี</td><td>อุทัยใหม่</td><td>เมืองอุทัยธานี</td><td>39</td><td>471</td><td>510</td><td>0.076471</td><td>0.923529</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>อู่ทอง</td><td>อู่ทอง</td><td>134</td><td>1474</td><td>1608</td><td>0.083333</td><td>0.916667</td><td>1</td></tr>
+<tr><td>ชลบุรี</td><td>ศรีราชา</td><td>ศรีราชา</td><td>6713</td><td>71947</td><td>78660</td><td>0.085342</td><td>0.914658</td><td>1</td></tr>
+<tr><td>กระบี่</td><td>เกาะลันตาใหญ่</td><td>เกาะลันตา</td><td>29</td><td>299</td><td>328</td><td>0.088415</td><td>0.911585</td><td>1</td></tr>
+<tr><td>นครศรีธรรมราช</td><td>ปากพนัง</td><td>ปากพนัง</td><td>70</td><td>704</td><td>774</td><td>0.090439</td><td>0.909561</td><td>1</td></tr>
+<tr><td>สมุทรสาคร</td><td>มหาชัย</td><td>มหาชัย</td><td>424</td><td>3888</td><td>4312</td><td>0.09833</td><td>0.90167</td><td>1</td></tr>
+<tr><td>ฉะเชิงเทรา</td><td>หน้าเมือง</td><td>เมืองฉะเชิงเทรา</td><td>310</td><td>2791</td><td>3101</td><td>0.099968</td><td>0.900032</td><td>1</td></tr>
+<tr><td>ภูเก็ต</td><td>ราไวย์</td><td>เมืองภูเก็ต</td><td>20</td><td>169</td><td>189</td><td>0.10582</td><td>0.89418</td><td>1</td></tr>
+<tr><td>นครศรีธรรมราช</td><td>ทุ่งสง</td><td>ทุ่งสง</td><td>113</td><td>951</td><td>1064</td><td>0.106203</td><td>0.893797</td><td>1</td></tr>
+<tr><td>พังงา</td><td>ตะกั่วทุ่ง</td><td>เมืองพังงา</td><td>85</td><td>706</td><td>791</td><td>0.107459</td><td>0.892541</td><td>1</td></tr>
+<tr><td>พัทลุง</td><td>เสกัก</td><td>เมืองพัทลุง</td><td>573</td><td>4544</td><td>5117</td><td>0.11198</td><td>0.88802</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>กะแดะ</td><td>กาญจนดิษฐ์</td><td>250</td><td>1900</td><td>2150</td><td>0.116279</td><td>0.883721</td><td>1</td></tr>
+<tr><td>พังงา</td><td>ท้ายเหมือง</td><td>ท้ายเหมือง</td><td>48</td><td>360</td><td>408</td><td>0.117647</td><td>0.882353</td><td>1</td></tr>
+<tr><td>สิงห์บุรี</td><td>บางพุทรา</td><td>เมืองสิงห์บุรี</td><td>810</td><td>5460</td><td>6270</td><td>0.129187</td><td>0.870813</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>สะเตง</td><td>เมืองยะลา</td><td>2376</td><td>15175</td><td>17551</td><td>0.135377</td><td>0.864623</td><td>1</td></tr>
+<tr><td>นครราชสีมา</td><td>ในเมือง</td><td>เมืองนครราชสีมา</td><td>2836</td><td>17306</td><td>20142</td><td>0.1408</td><td>0.8592</td><td>1</td></tr>
+<tr><td>ภูเก็ต</td><td>ตลาดใหญ่</td><td>เมืองภูเก็ต</td><td>481</td><td>2927</td><td>3408</td><td>0.141138</td><td>0.858862</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>แม่กลอง</td><td>เมืองสมุทรสงคราม</td><td>845</td><td>5079</td><td>5924</td><td>0.14264</td><td>0.85736</td><td>1</td></tr>
+<tr><td>ปราจีนบุรี</td><td>หน้าเมือง</td><td>เมืองปราจีนบุรี</td><td>157</td><td>922</td><td>1079</td><td>0.145505</td><td>0.854495</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>บางปู</td><td>ยะหริ่ง</td><td>2490</td><td>14521</td><td>17011</td><td>0.146376</td><td>0.853624</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>แม่กลอง</td><td>เมืองสมุทรสงคราม</td><td>3344</td><td>19428</td><td>22772</td><td>0.146847</td><td>0.853153</td><td>1</td></tr>
+<tr><td>สงขลา</td><td>น้ำน้อย</td><td>หาดใหญ่</td><td>478</td><td>2617</td><td>3095</td><td>0.154443</td><td>0.845557</td><td>1</td></tr>
+<tr><td>กระบี่</td><td>ศาลาด่าน</td><td>เกาะลันตา</td><td>5</td><td>26</td><td>31</td><td>0.16129</td><td>0.83871</td><td>1</td></tr>
+<tr><td>ชลบุรี</td><td>บางเสร่</td><td>สัตหีบ</td><td>4207</td><td>21500</td><td>25707</td><td>0.163652</td><td>0.836348</td><td>1</td></tr>
+<tr><td>สตูล</td><td>พิมาน</td><td>เมืองสตูล</td><td>73</td><td>373</td><td>446</td><td>0.163677</td><td>0.836323</td><td>1</td></tr>
+<tr><td>เพชรบุรี</td><td>บางตะบูน</td><td>บ้านแหลม</td><td>14309</td><td>72985</td><td>87294</td><td>0.163917</td><td>0.836083</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>บางแก้ว</td><td>เมืองสมุทรสงคราม</td><td>3457</td><td>17419</td><td>20876</td><td>0.165597</td><td>0.834403</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>ท่าพี่เลี้ยง</td><td>เมืองสุพรรณบุรี</td><td>830</td><td>4041</td><td>4871</td><td>0.170396</td><td>0.829604</td><td>1</td></tr>
+<tr><td>ฉะเชิงเทรา</td><td>หน้าเมือง</td><td>เมืองฉะเชิงเทรา</td><td>62</td><td>284</td><td>346</td><td>0.179191</td><td>0.820809</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>ยามู</td><td>ยะหริ่ง</td><td>2842</td><td>12669</td><td>15511</td><td>0.183225</td><td>0.816775</td><td>1</td></tr>
+<tr><td>นครศรีธรรมราช</td><td>คลัง</td><td>เมืองนครศรีธรรมราช</td><td>89</td><td>396</td><td>485</td><td>0.183505</td><td>0.816495</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>ในเมือง</td><td>เมืองนครพนม</td><td>2363</td><td>10507</td><td>12870</td><td>0.183605</td><td>0.816395</td><td>1</td></tr>
+<tr><td>สตูล</td><td>ตำมะลัง</td><td>เมืองสตูล</td><td>1063</td><td>4698</td><td>5761</td><td>0.184517</td><td>0.815483</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>โกตาบารู</td><td>รามัน</td><td>2581</td><td>11311</td><td>13892</td><td>0.18579</td><td>0.81421</td><td>1</td></tr>
+<tr><td>นครศรีธรรมราช</td><td>คลัง</td><td>เมืองนครศรีธรรมราช</td><td>178</td><td>761</td><td>939</td><td>0.189563</td><td>0.810437</td><td>1</td></tr>
+<tr><td>สงขลา</td><td>เกาะยอ</td><td>เมืองสงขลา</td><td>20763</td><td>87452</td><td>108215</td><td>0.191868</td><td>0.808132</td><td>1</td></tr>
+<tr><td>ตราด</td><td>บางพระ</td><td>เมืองตราด</td><td>516</td><td>2126</td><td>2642</td><td>0.195307</td><td>0.804693</td><td>1</td></tr>
+<tr><td>ร้อยเอ็ด</td><td>ในเมือง</td><td>เมืองร้อยเอ็ด</td><td>2083</td><td>8482</td><td>10565</td><td>0.19716</td><td>0.80284</td><td>1</td></tr>
+<tr><td>ตรัง</td><td>ทับเที่ยง</td><td>เมืองตรัง</td><td>2575</td><td>10234</td><td>12809</td><td>0.201031</td><td>0.798969</td><td>1</td></tr>
+<tr><td>ตราด</td><td>เกาะช้างใต้</td><td>เกาะช้าง</td><td>360</td><td>1385</td><td>1745</td><td>0.206304</td><td>0.793696</td><td>1</td></tr>
+<tr><td>สมุทรสาคร</td><td>ท่าฉลอม</td><td>เมืองสมุทรสาคร</td><td>6469</td><td>24707</td><td>31176</td><td>0.207499</td><td>0.792501</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>อาเนาะรู</td><td>เมืองปัตตานี</td><td>1380</td><td>5269</td><td>6649</td><td>0.20755</td><td>0.79245</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>บ้านแพน</td><td>เสนา</td><td>627</td><td>2392</td><td>3019</td><td>0.207685</td><td>0.792315</td><td>1</td></tr>
+<tr><td>ภูเก็ต</td><td>รัษฎา</td><td>เมืองภูเก็ต</td><td>152</td><td>573</td><td>725</td><td>0.209655</td><td>0.790345</td><td>1</td></tr>
+<tr><td>ประจวบคีรีขันธ์</td><td>ประจวบคีรีขันธ์</td><td>เมืองประจวบคีรีขันธ์</td><td>468</td><td>1729</td><td>2197</td><td>0.213018</td><td>0.786982</td><td>1</td></tr>
+<tr><td>จันทบุรี</td><td>จันทนิมิต</td><td>เมืองจันทบุรี</td><td>903</td><td>3317</td><td>4220</td><td>0.213981</td><td>0.786019</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>หอรัตนไชย</td><td>พระนครศรีอยุธยา</td><td>419</td><td>1528</td><td>1947</td><td>0.215203</td><td>0.784797</td><td>1</td></tr>
+<tr><td>ระยอง</td><td>เพ</td><td>เมืองระยอง</td><td>2448</td><td>8852</td><td>11300</td><td>0.216637</td><td>0.783363</td><td>1</td></tr>
+<tr><td>ชลบุรี</td><td>อ่างศิลา</td><td>เมืองชลบุรี</td><td>7290</td><td>25941</td><td>33231</td><td>0.219373</td><td>0.780627</td><td>1</td></tr>
+<tr><td>สมุทรปราการ</td><td>ตลาด</td><td>พระประแดง</td><td>1052</td><td>3737</td><td>4789</td><td>0.21967</td><td>0.78033</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>ท่าข้าม</td><td>พุนพิน</td><td>2251</td><td>7896</td><td>10147</td><td>0.221839</td><td>0.778161</td><td>1</td></tr>
+<tr><td>กาญจนบุรี</td><td>ปากแพรก</td><td>เมืองกาญจนบุรี</td><td>665</td><td>2330</td><td>2995</td><td>0.222037</td><td>0.777963</td><td>1</td></tr>
+<tr><td>นครสวรรค์</td><td>พยุหะ</td><td>พยุหะคีรี</td><td>2367</td><td>8077</td><td>10444</td><td>0.226637</td><td>0.773363</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>ช้างคลาน</td><td>เมืองเชียงใหม่</td><td>774</td><td>2639</td><td>3413</td><td>0.22678</td><td>0.77322</td><td>1</td></tr>
+<tr><td>นครปฐม</td><td>พระปฐมเจดีย์</td><td>เมืองนครปฐม</td><td>933</td><td>3139</td><td>4072</td><td>0.229126</td><td>0.770874</td><td>1</td></tr>
+<tr><td>นครสวรรค์</td><td>ตะเคียนเลื่อน</td><td>เมืองนครสวรรค์</td><td>8903</td><td>29653</td><td>38556</td><td>0.230911</td><td>0.769089</td><td>1</td></tr>
+<tr><td>ชลบุรี</td><td>ท่าเทววงษ์</td><td>เกาะสีชัง</td><td>644</td><td>2125</td><td>2769</td><td>0.232575</td><td>0.767425</td><td>1</td></tr>
+<tr><td>สมุทรปราการ</td><td>แหลมฟ้าผ่า</td><td>พระสมุทรเจดีย์</td><td>2852</td><td>9365</td><td>12217</td><td>0.233445</td><td>0.766555</td><td>1</td></tr>
+<tr><td>ราชบุรี</td><td>บ้านโป่ง</td><td>บ้านโป่ง</td><td>2313</td><td>7534</td><td>9847</td><td>0.234894</td><td>0.765106</td><td>1</td></tr>
+<tr><td>สมุทรปราการ</td><td>บางบ่อ</td><td>บางบ่อ</td><td>451</td><td>1431</td><td>1882</td><td>0.239639</td><td>0.760361</td><td>1</td></tr>
+<tr><td>นครสวรรค์</td><td>ตาคลี</td><td>ตาคลี</td><td>591</td><td>1853</td><td>2444</td><td>0.241817</td><td>0.758183</td><td>1</td></tr>
+<tr><td>ประจวบคีรีขันธ์</td><td>ปากน้ำปราณ</td><td>ปราณบุรี</td><td>4664</td><td>14228</td><td>18892</td><td>0.246877</td><td>0.753123</td><td>1</td></tr>
+<tr><td>นครศรีธรรมราช</td><td>เชียรใหญ่</td><td>เชียรใหญ่</td><td>2608</td><td>7514</td><td>10122</td><td>0.257657</td><td>0.742343</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>หายยา</td><td>เมืองเชียงใหม่</td><td>694</td><td>1992</td><td>2686</td><td>0.258377</td><td>0.741623</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>ช้างคลาน</td><td>เมืองเชียงใหม่</td><td>255</td><td>723</td><td>978</td><td>0.260736</td><td>0.739264</td><td>1</td></tr>
+<tr><td>สกลนคร</td><td>ธาตุเชิงชุม</td><td>เมืองสกลนคร</td><td>10270</td><td>28708</td><td>38978</td><td>0.263482</td><td>0.736518</td><td>1</td></tr>
+<tr><td>ลพบุรี</td><td>ท่าหิน</td><td>เมืองลพบุรี</td><td>1862</td><td>5093</td><td>6955</td><td>0.267721</td><td>0.732279</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>สามชุก</td><td>สามชุก</td><td>478</td><td>1307</td><td>1785</td><td>0.267787</td><td>0.732213</td><td>1</td></tr>
+<tr><td>พิษณุโลก</td><td>ท่ามะปราง</td><td>เมืองพิษณุโลก</td><td>543</td><td>1468</td><td>2011</td><td>0.270015</td><td>0.729985</td><td>1</td></tr>
+<tr><td>นครปฐม</td><td>บางเลน</td><td>บางเลน</td><td>918</td><td>2457</td><td>3375</td><td>0.272</td><td>0.728</td><td>1</td></tr>
+<tr><td>พะเยา</td><td>เวียง</td><td>เมืองพะเยา</td><td>650</td><td>1733</td><td>2383</td><td>0.272765</td><td>0.727235</td><td>1</td></tr>
+<tr><td>ชลบุรี</td><td>แสนสุข</td><td>เมืองชลบุรี</td><td>1324</td><td>3466</td><td>4790</td><td>0.276409</td><td>0.723591</td><td>1</td></tr>
+<tr><td>บุรีรัมย์</td><td>ในเมือง</td><td>เมืองบุรีรัมย์</td><td>3501</td><td>8973</td><td>12474</td><td>0.280664</td><td>0.719336</td><td>1</td></tr>
+<tr><td>เพชรบุรี</td><td>บ้านแหลม</td><td>บ้านแหลม</td><td>13507</td><td>34581</td><td>48088</td><td>0.280881</td><td>0.719119</td><td>1</td></tr>
+<tr><td>มหาสารคาม</td><td>ท่าขอนยาง</td><td>กันทรวิชัย</td><td>2776</td><td>7088</td><td>9864</td><td>0.281427</td><td>0.718573</td><td>1</td></tr>
+<tr><td>ระยอง</td><td>ท่าประดู่</td><td>เมืองระยอง</td><td>798</td><td>2024</td><td>2822</td><td>0.282778</td><td>0.717222</td><td>1</td></tr>
+<tr><td>ขอนแก่น</td><td>ในเมือง</td><td>เมืองขอนแก่น</td><td>3579</td><td>8834</td><td>12413</td><td>0.288327</td><td>0.711673</td><td>1</td></tr>
+<tr><td>สมุทรสาคร</td><td>หลักสาม</td><td>บ้านแพ้ว</td><td>717</td><td>1756</td><td>2473</td><td>0.289931</td><td>0.710069</td><td>1</td></tr>
+<tr><td>เพชรบุรี</td><td>ท่าราบ</td><td>เมืองเพชรบุรี</td><td>3837</td><td>9335</td><td>13172</td><td>0.2913</td><td>0.7087</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>พระสิงห์</td><td>เมืองเชียงใหม่</td><td>99</td><td>238</td><td>337</td><td>0.293769</td><td>0.706231</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>ศรีภูมิ</td><td>เมืองเชียงใหม่</td><td>1374</td><td>3277</td><td>4651</td><td>0.29542</td><td>0.70458</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>สวนพริก</td><td>พระนครศรีอยุธยา</td><td>2773</td><td>6566</td><td>9339</td><td>0.296927</td><td>0.703073</td><td>1</td></tr>
+<tr><td>ตาก</td><td>ระแหง</td><td>เมืองตาก</td><td>251</td><td>589</td><td>840</td><td>0.29881</td><td>0.70119</td><td>1</td></tr>
+<tr><td>นครปฐม</td><td>นครชัยศรี</td><td>นครชัยศรี</td><td>752</td><td>1755</td><td>2507</td><td>0.29996</td><td>0.70004</td><td>1</td></tr>
+<tr><td>ภูเก็ต</td><td>ไม้ขาว</td><td>ถลาง</td><td>18</td><td>41</td><td>59</td><td>0.305085</td><td>0.694915</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>พระสิงห์</td><td>เมืองเชียงใหม่</td><td>159</td><td>361</td><td>520</td><td>0.305769</td><td>0.694231</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>ท่าสาป</td><td>เมืองยะลา</td><td>1501</td><td>3384</td><td>4885</td><td>0.307267</td><td>0.692733</td><td>1</td></tr>
+<tr><td>เพชรบุรี</td><td>ท่ายาง</td><td>ท่ายาง</td><td>1027</td><td>2313</td><td>3340</td><td>0.307485</td><td>0.692515</td><td>1</td></tr>
+<tr><td>ลพบุรี</td><td>บ้านหมี่</td><td>บ้านหมี่</td><td>335</td><td>745</td><td>1080</td><td>0.310185</td><td>0.689815</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>สองพี่น้อง</td><td>สองพี่น้อง</td><td>644</td><td>1428</td><td>2072</td><td>0.310811</td><td>0.689189</td><td>1</td></tr>
+<tr><td>พิษณุโลก</td><td>ในเมือง</td><td>เมืองพิษณุโลก</td><td>818</td><td>1805</td><td>2623</td><td>0.311857</td><td>0.688143</td><td>1</td></tr>
+<tr><td>ลำปาง</td><td>สวนดอก</td><td>เมืองลำปาง</td><td>1167</td><td>2562</td><td>3729</td><td>0.312953</td><td>0.687047</td><td>1</td></tr>
+<tr><td>อ่างทอง</td><td>ศาลเจ้าโรงทอง</td><td>วิเศษชัยชาญ</td><td>654</td><td>1431</td><td>2085</td><td>0.313669</td><td>0.686331</td><td>1</td></tr>
+<tr><td>มหาสารคาม</td><td>ตลาด</td><td>เมืองมหาสารคาม</td><td>3609</td><td>7887</td><td>11496</td><td>0.313935</td><td>0.686065</td><td>1</td></tr>
+<tr><td>อุทัยธานี</td><td>สะแกกรัง</td><td>เมืองอุทัยธานี</td><td>2078</td><td>4504</td><td>6582</td><td>0.31571</td><td>0.68429</td><td>1</td></tr>
+<tr><td>หนองคาย</td><td>ในเมือง</td><td>เมืองหนองคาย</td><td>15813</td><td>33665</td><td>49478</td><td>0.319597</td><td>0.680403</td><td>1</td></tr>
+<tr><td>ฉะเชิงเทรา</td><td>คลองนครเนื่องเขต</td><td>เมืองฉะเชิงเทรา</td><td>147</td><td>311</td><td>458</td><td>0.320961</td><td>0.679039</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>พระสิงห์</td><td>เมืองเชียงใหม่</td><td>701</td><td>1477</td><td>2178</td><td>0.321855</td><td>0.678145</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>ธาตุพนม</td><td>ธาตุพนม</td><td>2992</td><td>6245</td><td>9237</td><td>0.323915</td><td>0.676085</td><td>1</td></tr>
+<tr><td>ราชบุรี</td><td>หน้าเมือง</td><td>เมืองราชบุรี</td><td>982</td><td>2032</td><td>3014</td><td>0.325813</td><td>0.674187</td><td>1</td></tr>
+<tr><td>ระนอง</td><td>ปากน้ำ</td><td>เมืองระนอง</td><td>873</td><td>1780</td><td>2653</td><td>0.329061</td><td>0.670939</td><td>1</td></tr>
+<tr><td>ยโสธร</td><td>ในเมือง</td><td>เมืองยโสธร</td><td>16215</td><td>32784</td><td>48999</td><td>0.330925</td><td>0.669075</td><td>1</td></tr>
+<tr><td>สมุทรปราการ</td><td>นาเกลือ</td><td>พระสมุทรเจดีย์</td><td>7406</td><td>14922</td><td>22328</td><td>0.331691</td><td>0.668309</td><td>1</td></tr>
+<tr><td>ชลบุรี</td><td>นาเกลือ</td><td>บางละมุง</td><td>7702</td><td>15497</td><td>23199</td><td>0.331997</td><td>0.668003</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>ดอนสัก</td><td>ดอนสัก</td><td>182</td><td>363</td><td>545</td><td>0.333945</td><td>0.666055</td><td>1</td></tr>
+<tr><td>นครสวรรค์</td><td>เกยไชย</td><td>ชุมแสง</td><td>1402</td><td>2794</td><td>4196</td><td>0.334128</td><td>0.665872</td><td>1</td></tr>
+<tr><td>ชลบุรี</td><td>นาจอมเทียน</td><td>สัตหีบ</td><td>3859</td><td>7613</td><td>11472</td><td>0.336384</td><td>0.663616</td><td>1</td></tr>
+<tr><td>ฉะเชิงเทรา</td><td>บางคล้า</td><td>บางคล้า</td><td>668</td><td>1312</td><td>1980</td><td>0.337374</td><td>0.662626</td><td>1</td></tr>
+<tr><td>ชลบุรี</td><td>บางปลาสร้อย</td><td>เมืองชลบุรี</td><td>9858</td><td>19104</td><td>28962</td><td>0.340377</td><td>0.659623</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>เบตง</td><td>เบตง</td><td>3526</td><td>6747</td><td>10273</td><td>0.34323</td><td>0.65677</td><td>1</td></tr>
+<tr><td>พิจิตร</td><td>บางมูลนาก</td><td>บางมูลนาก</td><td>2506</td><td>4700</td><td>7206</td><td>0.347766</td><td>0.652234</td><td>1</td></tr>
+<tr><td>ฉะเชิงเทรา</td><td>พนมสารคาม</td><td>พนมสารคาม</td><td>808</td><td>1509</td><td>2317</td><td>0.348727</td><td>0.651273</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>รางจระเข้</td><td>เสนา</td><td>9698</td><td>17933</td><td>27631</td><td>0.350983</td><td>0.649017</td><td>1</td></tr>
+<tr><td>กาฬสินธุ์</td><td>กาฬสินธุ์</td><td>เมืองกาฬสินธุ์</td><td>4194</td><td>7661</td><td>11855</td><td>0.353775</td><td>0.646225</td><td>1</td></tr>
+<tr><td>นนทบุรี</td><td>สวนใหญ่</td><td>เมืองนนทบุรี</td><td>1020</td><td>1855</td><td>2875</td><td>0.354783</td><td>0.645217</td><td>1</td></tr>
+<tr><td>กาญจนบุรี</td><td>ดอนขมิ้น</td><td>ท่ามะกา</td><td>1410</td><td>2557</td><td>3967</td><td>0.355432</td><td>0.644568</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>ท่าเรือ</td><td>ท่าเรือ</td><td>3060</td><td>5494</td><td>8554</td><td>0.357727</td><td>0.642273</td><td>1</td></tr>
+<tr><td>ตรัง</td><td>กันตัง</td><td>กันตัง</td><td>8811</td><td>15422</td><td>24233</td><td>0.363595</td><td>0.636405</td><td>1</td></tr>
+<tr><td>นครปฐม</td><td>บางกระทึก</td><td>สามพราน</td><td>812</td><td>1419</td><td>2231</td><td>0.363962</td><td>0.636038</td><td>1</td></tr>
+<tr><td>นราธิวาส</td><td>ยี่งอ</td><td>ยี่งอ</td><td>3223</td><td>5576</td><td>8799</td><td>0.366292</td><td>0.633708</td><td>1</td></tr>
+<tr><td>ประจวบคีรีขันธ์</td><td>ทับสะแก</td><td>ทับสะแก</td><td>1045</td><td>1801</td><td>2846</td><td>0.367182</td><td>0.632818</td><td>1</td></tr>
+<tr><td>พะเยา</td><td>เวียง</td><td>เมืองพะเยา</td><td>1127</td><td>1941</td><td>3068</td><td>0.36734</td><td>0.63266</td><td>1</td></tr>
+<tr><td>อุดรธานี</td><td>หนองหาน</td><td>หนองหาน</td><td>3572</td><td>6091</td><td>9663</td><td>0.369657</td><td>0.630343</td><td>1</td></tr>
+<tr><td>นครปฐม</td><td>ศาลายา</td><td>พุทธมณฑล</td><td>2119</td><td>3535</td><td>5654</td><td>0.374779</td><td>0.625221</td><td>1</td></tr>
+<tr><td>นราธิวาส</td><td>โคกเคียน</td><td>เมืองนราธิวาส</td><td>3</td><td>5</td><td>8</td><td>0.375</td><td>0.625</td><td>1</td></tr>
+<tr><td>กาญจนบุรี</td><td>หนองขาว</td><td>ท่าม่วง</td><td>4889</td><td>8136</td><td>13025</td><td>0.375355</td><td>0.624645</td><td>1</td></tr>
+<tr><td>สมุทรปราการ</td><td>บางพลีใหญ่</td><td>บางพลี</td><td>884</td><td>1462</td><td>2346</td><td>0.376812</td><td>0.623188</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>บางจะเกร็ง</td><td>เมืองสมุทรสงคราม</td><td>4447</td><td>7347</td><td>11794</td><td>0.377056</td><td>0.622944</td><td>1</td></tr>
+<tr><td>จันทบุรี</td><td>ท่าใหม่</td><td>ท่าใหม่</td><td>2468</td><td>4056</td><td>6524</td><td>0.378296</td><td>0.621704</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>รูสะมิแล</td><td>เมืองปัตตานี</td><td>2608</td><td>4284</td><td>6892</td><td>0.37841</td><td>0.62159</td><td>1</td></tr>
+<tr><td>ราชบุรี</td><td>ปากท่อ</td><td>ปากท่อ</td><td>1204</td><td>1969</td><td>3173</td><td>0.379452</td><td>0.620548</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>ยางเนิ้ง</td><td>สันกำแพง</td><td>797</td><td>1303</td><td>2100</td><td>0.379524</td><td>0.620476</td><td>1</td></tr>
+<tr><td>หนองบัวลำภู</td><td>ลำภู</td><td>เมืองหนองบัวลำภู</td><td>2709</td><td>4316</td><td>7025</td><td>0.385623</td><td>0.614377</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>ตันหยงลุโละ</td><td>เมืองปัตตานี</td><td>5501</td><td>8686</td><td>14187</td><td>0.387749</td><td>0.612251</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>เรณู</td><td>เรณูนคร</td><td>3806</td><td>5977</td><td>9783</td><td>0.389042</td><td>0.610958</td><td>1</td></tr>
+<tr><td>ตราด</td><td>แหลมงอบ</td><td>แหลมงอบ</td><td>1650</td><td>2563</td><td>4213</td><td>0.391645</td><td>0.608355</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>บาราเฮาะ</td><td>เมืองปัตตานี</td><td>22189</td><td>34415</td><td>56604</td><td>0.392004</td><td>0.607996</td><td>1</td></tr>
+<tr><td>ราชบุรี</td><td>หน้าเมือง</td><td>เมืองราชบุรี</td><td>255</td><td>395</td><td>650</td><td>0.392308</td><td>0.607692</td><td>1</td></tr>
+<tr><td>น่าน</td><td>นาทะนุง</td><td>นาหมื่น</td><td>752</td><td>1156</td><td>1908</td><td>0.39413</td><td>0.60587</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>แม่กลอง</td><td>เมืองสมุทรสงคราม</td><td>2576</td><td>3938</td><td>6514</td><td>0.395456</td><td>0.604544</td><td>1</td></tr>
+<tr><td>อุบลราชธานี</td><td>วารินชำราบ</td><td>วารินชำราบ</td><td>5695</td><td>8665</td><td>14360</td><td>0.396588</td><td>0.603412</td><td>1</td></tr>
+<tr><td>มหาสารคาม</td><td>เขวา</td><td>เมืองมหาสารคาม</td><td>2783</td><td>4195</td><td>6978</td><td>0.398825</td><td>0.601175</td><td>1</td></tr>
+<tr><td>ลพบุรี</td><td>ทะเลชุบศร</td><td>เมืองลพบุรี</td><td>348</td><td>522</td><td>870</td><td>0.4</td><td>0.6</td><td>1</td></tr>
+<tr><td>หนองคาย</td><td>พานพร้าว</td><td>ศรีเชียงใหม่</td><td>5809</td><td>8658</td><td>14467</td><td>0.401535</td><td>0.598465</td><td>1</td></tr>
+<tr><td>นครปฐม</td><td>ไร่ขิง</td><td>สามพราน</td><td>2887</td><td>4298</td><td>7185</td><td>0.401809</td><td>0.598191</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>ตลาด</td><td>เมืองสุราษฎร์ธานี</td><td>426</td><td>634</td><td>1060</td><td>0.401887</td><td>0.598113</td><td>1</td></tr>
+<tr><td>ชัยภูมิ</td><td>บ้านยาง</td><td>เกษตรสมบูรณ์</td><td>3217</td><td>4785</td><td>8002</td><td>0.402024</td><td>0.597976</td><td>1</td></tr>
+<tr><td>ระยอง</td><td>ทางเกวียน</td><td>แกลง</td><td>1608</td><td>2358</td><td>3966</td><td>0.405446</td><td>0.594554</td><td>1</td></tr>
+<tr><td>ชัยนาท</td><td>โพนางดำ</td><td>สรรพยา</td><td>2404</td><td>3520</td><td>5924</td><td>0.405807</td><td>0.594193</td><td>1</td></tr>
+<tr><td>สมุทรปราการ</td><td>แหลมฟ้าผ่า</td><td>พระสมุทรเจดีย์</td><td>9991</td><td>14627</td><td>24618</td><td>0.405841</td><td>0.594159</td><td>1</td></tr>
+<tr><td>อุบลราชธานี</td><td>พิบูลมังสาหาร</td><td>พิบูลมังสาหาร</td><td>4381</td><td>6333</td><td>10714</td><td>0.408904</td><td>0.591096</td><td>1</td></tr>
+<tr><td>ปราจีนบุรี</td><td>ศรีมหาโพธิ์</td><td>ศรีมหาโพธิ์</td><td>1525</td><td>2186</td><td>3711</td><td>0.41094</td><td>0.58906</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>รอบเวียง</td><td>เมืองเชียงราย</td><td>849</td><td>1204</td><td>2053</td><td>0.413541</td><td>0.586459</td><td>1</td></tr>
+<tr><td>กำแพงเพชร</td><td>ถ้ำกระต่ายทอง</td><td>พรานกระต่าย</td><td>5628</td><td>7973</td><td>13601</td><td>0.413793</td><td>0.586207</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>ช้างเผือก</td><td>เมืองเชียงใหม่</td><td>1339</td><td>1895</td><td>3234</td><td>0.414038</td><td>0.585962</td><td>1</td></tr>
+<tr><td>พัทลุง</td><td>ท่ามะเดื่อ</td><td>บางแก้ว</td><td>276</td><td>389</td><td>665</td><td>0.415038</td><td>0.584962</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>พิเทน</td><td>ทุ่งยางแดง</td><td>13827</td><td>19433</td><td>33260</td><td>0.415725</td><td>0.584275</td><td>1</td></tr>
+<tr><td>เลย</td><td>นาซ่าว</td><td>เชียงคาน</td><td>2552</td><td>3568</td><td>6120</td><td>0.416993</td><td>0.583007</td><td>1</td></tr>
+<tr><td>ประจวบคีรีขันธ์</td><td>กุยบุรี</td><td>กุยบุรี</td><td>1106</td><td>1534</td><td>2640</td><td>0.418939</td><td>0.581061</td><td>1</td></tr>
+<tr><td>บุรีรัมย์</td><td>นางรอง</td><td>นางรอง</td><td>2466</td><td>3354</td><td>5820</td><td>0.423711</td><td>0.576289</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>ศรีประจันต์</td><td>ศรีประจันต์</td><td>1047</td><td>1423</td><td>2470</td><td>0.423887</td><td>0.576113</td><td>1</td></tr>
+<tr><td>นนทบุรี</td><td>บางคูเวียง</td><td>บางกรวย</td><td>629</td><td>847</td><td>1476</td><td>0.426152</td><td>0.573848</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>วัดโบสถ์</td><td>บางปลาม้า</td><td>556</td><td>743</td><td>1299</td><td>0.428022</td><td>0.571978</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>เขาพระ</td><td>เดิมบางนางบวช</td><td>1495</td><td>1987</td><td>3482</td><td>0.429351</td><td>0.570649</td><td>1</td></tr>
+<tr><td>กาฬสินธุ์</td><td>หนองแปน</td><td>กมลาไสย</td><td>8099</td><td>10678</td><td>18777</td><td>0.431326</td><td>0.568674</td><td>1</td></tr>
+<tr><td>นนทบุรี</td><td>บางขุนกอง</td><td>บางกรวย</td><td>5587</td><td>7243</td><td>12830</td><td>0.435464</td><td>0.564536</td><td>1</td></tr>
+<tr><td>พังงา</td><td>ตะกั่วป่า</td><td>ตะกั่วป่า</td><td>310</td><td>401</td><td>711</td><td>0.436006</td><td>0.563994</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>กระดังงา</td><td>บางคนที</td><td>750</td><td>963</td><td>1713</td><td>0.437828</td><td>0.562172</td><td>1</td></tr>
+<tr><td>สุโขทัย</td><td>ศรีสำโรง</td><td>ศรีสำโรง</td><td>9885</td><td>12662</td><td>22547</td><td>0.438418</td><td>0.561582</td><td>1</td></tr>
+<tr><td>บุรีรัมย์</td><td>ประโคนชัย</td><td>ประโคนชัย</td><td>4190</td><td>5367</td><td>9557</td><td>0.438422</td><td>0.561578</td><td>1</td></tr>
+<tr><td>ระนอง</td><td>ปากน้ำ</td><td>เมืองระนอง</td><td>790</td><td>1009</td><td>1799</td><td>0.439133</td><td>0.560867</td><td>1</td></tr>
+<tr><td>ร้อยเอ็ด</td><td>ขวัญเมือง</td><td>เสลภูมิ</td><td>3104</td><td>3903</td><td>7007</td><td>0.442986</td><td>0.557014</td><td>1</td></tr>
+<tr><td>พิจิตร</td><td>ตะพานหิน</td><td>ตะพานหิน</td><td>117</td><td>147</td><td>264</td><td>0.443182</td><td>0.556818</td><td>1</td></tr>
+<tr><td>นครนายก</td><td>นครนายก</td><td>เมืองนครนายก</td><td>4614</td><td>5754</td><td>10368</td><td>0.445023</td><td>0.554977</td><td>1</td></tr>
+<tr><td>ตรัง</td><td>ย่านตาขาว</td><td>ปะเหลียน</td><td>7044</td><td>8659</td><td>15703</td><td>0.448577</td><td>0.551423</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>บางปลาม้า</td><td>บางปลาม้า</td><td>1131</td><td>1379</td><td>2510</td><td>0.450598</td><td>0.549402</td><td>1</td></tr>
+<tr><td>ยโสธร</td><td>นาสะไมย์</td><td>เมืองยโสธร</td><td>4380</td><td>5334</td><td>9714</td><td>0.450896</td><td>0.549104</td><td>1</td></tr>
+<tr><td>ราชบุรี</td><td>สีหมื่น</td><td>ดำเนินสะดวก</td><td>556</td><td>668</td><td>1224</td><td>0.454248</td><td>0.545752</td><td>1</td></tr>
+<tr><td>ระยอง</td><td>ปากน้ำประแสร์</td><td>แกลง</td><td>16812</td><td>20114</td><td>36926</td><td>0.455289</td><td>0.544711</td><td>1</td></tr>
+<tr><td>ประจวบคีรีขันธ์</td><td>ธงชัย</td><td>บางสะพาน</td><td>943</td><td>1121</td><td>2064</td><td>0.45688</td><td>0.54312</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>บ้านแหลม</td><td>บางปลาม้า</td><td>633</td><td>751</td><td>1384</td><td>0.45737</td><td>0.54263</td><td>1</td></tr>
+<tr><td>ชลบุรี</td><td>สัตหีบ</td><td>สัตหีบ</td><td>17041</td><td>20204</td><td>37245</td><td>0.457538</td><td>0.542462</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>ในเมือง</td><td>เมืองสุรินทร์</td><td>3851</td><td>4521</td><td>8372</td><td>0.459986</td><td>0.540014</td><td>1</td></tr>
+<tr><td>สุโขทัย</td><td>ศรีสัชนาลัย</td><td>ศรีสัชนาลัย</td><td>885</td><td>1024</td><td>1909</td><td>0.463594</td><td>0.536406</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>บ้านส้อง</td><td>เวียงสระ</td><td>3759</td><td>4319</td><td>8078</td><td>0.465338</td><td>0.534662</td><td>1</td></tr>
+<tr><td>สตูล</td><td>ตันหยงโป</td><td>เมืองสตูล</td><td>1128</td><td>1296</td><td>2424</td><td>0.465347</td><td>0.534653</td><td>1</td></tr>
+<tr><td>ชัยภูมิ</td><td>คอนสวรรค์</td><td>คอนสวรรค์</td><td>4985</td><td>5704</td><td>10689</td><td>0.466367</td><td>0.533633</td><td>1</td></tr>
+<tr><td>มหาสารคาม</td><td>เมืองเตา</td><td>พยัคฆภูมิพิสัย</td><td>5197</td><td>5903</td><td>11100</td><td>0.468198</td><td>0.531802</td><td>1</td></tr>
+<tr><td>ศรีสะเกษ</td><td>หว้านคำ</td><td>ราษีไศล</td><td>3523</td><td>3979</td><td>7502</td><td>0.469608</td><td>0.530392</td><td>1</td></tr>
+<tr><td>นครปฐม</td><td>กำแพงแสน</td><td>กำแพงแสน</td><td>573</td><td>639</td><td>1212</td><td>0.472772</td><td>0.527228</td><td>1</td></tr>
+<tr><td>นครนายก</td><td>บ้านนา</td><td>บ้านนา</td><td>3065</td><td>3402</td><td>6467</td><td>0.473945</td><td>0.526055</td><td>1</td></tr>
+<tr><td>นครปฐม</td><td>ลำพญา</td><td>บางเลน</td><td>1059</td><td>1174</td><td>2233</td><td>0.47425</td><td>0.52575</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>แควอ้อม</td><td>อัมพวา</td><td>1183</td><td>1309</td><td>2492</td><td>0.474719</td><td>0.525281</td><td>1</td></tr>
+<tr><td>พิจิตร</td><td>ตะพานหิน</td><td>ตะพานหิน</td><td>7737</td><td>8523</td><td>16260</td><td>0.47583</td><td>0.52417</td><td>1</td></tr>
+<tr><td>กาฬสินธุ์</td><td>โพน</td><td>คำม่วง</td><td>7266</td><td>7976</td><td>15242</td><td>0.476709</td><td>0.523291</td><td>1</td></tr>
+<tr><td>สกลนคร</td><td>ท่าแร่</td><td>เมืองสกลนคร</td><td>14814</td><td>16200</td><td>31014</td><td>0.477655</td><td>0.522345</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>แหลมโพธิ์</td><td>ยะหริ่ง</td><td>8424</td><td>9172</td><td>17596</td><td>0.478745</td><td>0.521255</td><td>1</td></tr>
+<tr><td>ร้อยเอ็ด</td><td>เมืองบัว</td><td>เกษตรวิสัย</td><td>3548</td><td>3859</td><td>7407</td><td>0.479006</td><td>0.520994</td><td>1</td></tr>
+<tr><td>นครปฐม</td><td>บางหลวง</td><td>บางเลน</td><td>7720</td><td>8121</td><td>15841</td><td>0.487343</td><td>0.512657</td><td>1</td></tr>
+<tr><td>แพร่</td><td>ห้วยอ้อ</td><td>ลอง</td><td>1598</td><td>1669</td><td>3267</td><td>0.489134</td><td>0.510866</td><td>1</td></tr>
+<tr><td>สิงห์บุรี</td><td>ชีน้ำร้าย</td><td>อินทร์บุรี</td><td>2049</td><td>2130</td><td>4179</td><td>0.490309</td><td>0.509691</td><td>1</td></tr>
+<tr><td>เลย</td><td>เชียงคาน</td><td>เชียงคาน</td><td>3838</td><td>3901</td><td>7739</td><td>0.49593</td><td>0.50407</td><td>1</td></tr>
+<tr><td>สระบุรี</td><td>ต้นตลาด</td><td>เสาไห้</td><td>4131</td><td>4193</td><td>8324</td><td>0.496276</td><td>0.503724</td><td>1</td></tr>
+<tr><td>นครราชสีมา</td><td>ในเมือง</td><td>พิมาย</td><td>11245</td><td>11411</td><td>22656</td><td>0.496337</td><td>0.503663</td><td>1</td></tr>
+<tr><td>ขอนแก่น</td><td>เมืองพล</td><td>พล</td><td>34984</td><td>35182</td><td>70166</td><td>0.498589</td><td>0.501411</td><td>1</td></tr>
+<tr><td>นราธิวาส</td><td>ตันหยงมัส</td><td>ระแงะ</td><td>3579</td><td>3570</td><td>7149</td><td>0.500629</td><td>0.499371</td><td>1</td></tr>
+<tr><td>จันทบุรี</td><td>มะขาม</td><td>มะขาม</td><td>853</td><td>848</td><td>1701</td><td>0.50147</td><td>0.49853</td><td>1</td></tr>
+<tr><td>สุโขทัย</td><td>เมืองสวรรคโลก</td><td>สวรรคโลก</td><td>7901</td><td>7842</td><td>15743</td><td>0.501874</td><td>0.498126</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>ท่าอุเทน</td><td>ท่าอุเทน</td><td>6639</td><td>6527</td><td>13166</td><td>0.504253</td><td>0.495747</td><td>1</td></tr>
+<tr><td>มหาสารคาม</td><td>ปะหลาน</td><td>พยัคฆภูมิพิสัย</td><td>18201</td><td>17630</td><td>35831</td><td>0.507968</td><td>0.492032</td><td>1</td></tr>
+<tr><td>บุรีรัมย์</td><td>จระเข้มาก</td><td>ประโคนชัย</td><td>6422</td><td>6141</td><td>12563</td><td>0.511184</td><td>0.488816</td><td>1</td></tr>
+<tr><td>ยโสธร</td><td>ศรีฐาน</td><td>ป่าติ้ว</td><td>7536</td><td>7182</td><td>14718</td><td>0.512026</td><td>0.487974</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>ทรายขาว</td><td>โคกโพธิ์</td><td>7405</td><td>7033</td><td>14438</td><td>0.512883</td><td>0.487117</td><td>1</td></tr>
+<tr><td>เพชรบูรณ์</td><td>ศรีเทพ</td><td>ศรีเทพ</td><td>39015</td><td>36389</td><td>75404</td><td>0.517413</td><td>0.482587</td><td>1</td></tr>
+<tr><td>นครนายก</td><td>บางปลากด</td><td>องครักษ์</td><td>9744</td><td>8998</td><td>18742</td><td>0.519902</td><td>0.480098</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>ไผ่กองดิน</td><td>บางปลาม้า</td><td>844</td><td>778</td><td>1622</td><td>0.520345</td><td>0.479655</td><td>1</td></tr>
+<tr><td>เพชรบุรี</td><td>บ้านลาด</td><td>บ้านลาด</td><td>997</td><td>911</td><td>1908</td><td>0.522537</td><td>0.477463</td><td>1</td></tr>
+<tr><td>พัทลุง</td><td>ปากพะยูน</td><td>ปากพะยูน</td><td>1838</td><td>1677</td><td>3515</td><td>0.522902</td><td>0.477098</td><td>1</td></tr>
+<tr><td>ตราด</td><td>เกาะช้างใต้</td><td>เกาะช้าง</td><td>1069</td><td>973</td><td>2042</td><td>0.523506</td><td>0.476494</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>จองคำ</td><td>เมืองแม่ฮ่องสอน</td><td>502</td><td>455</td><td>957</td><td>0.524556</td><td>0.475444</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>บันนังสาเรง</td><td>เมืองยะลา</td><td>33154</td><td>29984</td><td>63138</td><td>0.525104</td><td>0.474896</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>วัดโบสถ์</td><td>บางปลาม้า</td><td>364</td><td>329</td><td>693</td><td>0.525253</td><td>0.474747</td><td>1</td></tr>
+<tr><td>สกลนคร</td><td>กุสุมาลย์</td><td>กุสุมาลย์</td><td>6678</td><td>5988</td><td>12666</td><td>0.527238</td><td>0.472762</td><td>1</td></tr>
+<tr><td>บึงกาฬ</td><td>บึงกาฬ</td><td>เมืองบึงกาฬ</td><td>21361</td><td>19135</td><td>40496</td><td>0.527484</td><td>0.472516</td><td>1</td></tr>
+<tr><td>กาญจนบุรี</td><td>รางหวาย</td><td>พนมทวน</td><td>9272</td><td>8279</td><td>17551</td><td>0.528289</td><td>0.471711</td><td>1</td></tr>
+<tr><td>นครศรีธรรมราช</td><td>ขนอม</td><td>ขนอม</td><td>709</td><td>630</td><td>1339</td><td>0.5295</td><td>0.4705</td><td>1</td></tr>
+<tr><td>สุโขทัย</td><td>ศรีนคร</td><td>ศรีนคร</td><td>12008</td><td>10650</td><td>22658</td><td>0.529967</td><td>0.470033</td><td>1</td></tr>
+<tr><td>ตราด</td><td>คลองใหญ่</td><td>แหลมงอบ</td><td>6653</td><td>5826</td><td>12479</td><td>0.533136</td><td>0.466864</td><td>1</td></tr>
+<tr><td>นครศรีธรรมราช</td><td>ท่าเรือ</td><td>เมืองนครศรีธรรมราช</td><td>6167</td><td>5390</td><td>11557</td><td>0.533616</td><td>0.466384</td><td>1</td></tr>
+<tr><td>หนองคาย</td><td>ท่าบ่อ</td><td>ท่าบ่อ</td><td>5072</td><td>4420</td><td>9492</td><td>0.534345</td><td>0.465655</td><td>1</td></tr>
+<tr><td>ปราจีนบุรี</td><td>กบินทร์</td><td>กบินทร์บุรี</td><td>3297</td><td>2857</td><td>6154</td><td>0.535749</td><td>0.464251</td><td>1</td></tr>
+<tr><td>ตรัง</td><td>ทุ่งยาว</td><td>ปะเหลียน</td><td>2003</td><td>1732</td><td>3735</td><td>0.536278</td><td>0.463722</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>วัดเกต</td><td>เมืองเชียงใหม่</td><td>1053</td><td>909</td><td>1962</td><td>0.536697</td><td>0.463303</td><td>1</td></tr>
+<tr><td>สิงห์บุรี</td><td>อินทร์บุรี</td><td>อินทร์บุรี</td><td>2942</td><td>2517</td><td>5459</td><td>0.538927</td><td>0.461073</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>บ้านแพง</td><td>บ้านแพง</td><td>9115</td><td>7765</td><td>16880</td><td>0.539988</td><td>0.460012</td><td>1</td></tr>
+<tr><td>อุดรธานี</td><td>นาข่า</td><td>เมืองอุดรธานี</td><td>5708</td><td>4861</td><td>10569</td><td>0.54007</td><td>0.45993</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>วัดเกต</td><td>เมืองเชียงใหม่</td><td>3135</td><td>2660</td><td>5795</td><td>0.540984</td><td>0.459016</td><td>1</td></tr>
+<tr><td>ปทุมธานี</td><td>บึงยี่โถ</td><td>ธัญบุรี</td><td>169</td><td>143</td><td>312</td><td>0.541667</td><td>0.458333</td><td>1</td></tr>
+<tr><td>นครสวรรค์</td><td>ทับกฤช</td><td>ชุมแสง</td><td>3305</td><td>2796</td><td>6101</td><td>0.541714</td><td>0.458286</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>ตะลุบัน</td><td>สายบุรี</td><td>4856</td><td>4108</td><td>8964</td><td>0.541722</td><td>0.458278</td><td>1</td></tr>
+<tr><td>อุดรธานี</td><td>กุมภวาปี</td><td>กุมภวาปี</td><td>18156</td><td>15317</td><td>33473</td><td>0.542407</td><td>0.457593</td><td>1</td></tr>
+<tr><td>นครราชสีมา</td><td>เมืองปัก</td><td>ปักธงชัย</td><td>6098</td><td>5135</td><td>11233</td><td>0.542865</td><td>0.457135</td><td>1</td></tr>
+<tr><td>ลำปาง</td><td>ลำปางหลวง</td><td>เกาะคา</td><td>1915</td><td>1608</td><td>3523</td><td>0.543571</td><td>0.456429</td><td>1</td></tr>
+<tr><td>ตาก</td><td>ตากออก</td><td>บ้านตาก</td><td>8152</td><td>6838</td><td>14990</td><td>0.543829</td><td>0.456171</td><td>1</td></tr>
+<tr><td>กาฬสินธุ์</td><td>นามน</td><td>นามน</td><td>3284</td><td>2743</td><td>6027</td><td>0.544881</td><td>0.455119</td><td>1</td></tr>
+<tr><td>พะเยา</td><td>เวียง</td><td>เมืองพะเยา</td><td>828</td><td>680</td><td>1508</td><td>0.549072</td><td>0.450928</td><td>1</td></tr>
+<tr><td>ยโสธร</td><td>ตาดทอง</td><td>เมืองยโสธร</td><td>7974</td><td>6529</td><td>14503</td><td>0.549817</td><td>0.450183</td><td>1</td></tr>
+<tr><td>บุรีรัมย์</td><td>ในเมือง</td><td>เมืองบุรีรัมย์</td><td>5910</td><td>4822</td><td>10732</td><td>0.55069</td><td>0.44931</td><td>1</td></tr>
+<tr><td>นครราชสีมา</td><td>สีคิ้ว</td><td>สีคิ้ว</td><td>8810</td><td>7176</td><td>15986</td><td>0.551107</td><td>0.448893</td><td>1</td></tr>
+<tr><td>ชัยภูมิ</td><td>กุดต้ม</td><td>เมืองชัยภูมิ</td><td>2842</td><td>2298</td><td>5140</td><td>0.552918</td><td>0.447082</td><td>1</td></tr>
+<tr><td>อุดรธานี</td><td>วังสามหมอ</td><td>วังสามหมอ</td><td>9610</td><td>7723</td><td>17333</td><td>0.554434</td><td>0.445566</td><td>1</td></tr>
+<tr><td>หนองบัวลำภู</td><td>ลำภู</td><td>เมืองหนองบัวลำภู</td><td>6162</td><td>4946</td><td>11108</td><td>0.554735</td><td>0.445265</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>บ้านเลน</td><td>บางปะอิน</td><td>8950</td><td>7180</td><td>16130</td><td>0.554867</td><td>0.445133</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>หนองน้ำใหญ่</td><td>ผักไห่</td><td>10123</td><td>8033</td><td>18156</td><td>0.557557</td><td>0.442443</td><td>1</td></tr>
+<tr><td>ลพบุรี</td><td>บางขันหมาก</td><td>เมืองลพบุรี</td><td>5362</td><td>4229</td><td>9591</td><td>0.559066</td><td>0.440934</td><td>1</td></tr>
+<tr><td>เลย</td><td>ด่านซ้าย</td><td>ด่านซ้าย</td><td>2110</td><td>1656</td><td>3766</td><td>0.560276</td><td>0.439724</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>บางเขา</td><td>หนองจิก</td><td>2593</td><td>2027</td><td>4620</td><td>0.561255</td><td>0.438745</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>โพนจาน</td><td>โพนสวรรค์</td><td>4827</td><td>3743</td><td>8570</td><td>0.563244</td><td>0.436756</td><td>1</td></tr>
+<tr><td>ร้อยเอ็ด</td><td>ทุ่งกุลา</td><td>สุวรรณภูมิ</td><td>3133</td><td>2425</td><td>5558</td><td>0.563692</td><td>0.436308</td><td>1</td></tr>
+<tr><td>ยโสธร</td><td>สงเปือย</td><td>คำเขื่อนแก้ว</td><td>6972</td><td>5394</td><td>12366</td><td>0.563804</td><td>0.436196</td><td>1</td></tr>
+<tr><td>จันทบุรี</td><td>ตลาด</td><td>เมืองจันทบุรี</td><td>2348</td><td>1790</td><td>4138</td><td>0.567424</td><td>0.432576</td><td>1</td></tr>
+<tr><td>แพร่</td><td>ทุ่งโฮ้ง</td><td>เมืองแพร่</td><td>10343</td><td>7878</td><td>18221</td><td>0.567642</td><td>0.432358</td><td>1</td></tr>
+<tr><td>สตูล</td><td>ฉลุง</td><td>ควนโดน</td><td>754</td><td>572</td><td>1326</td><td>0.568627</td><td>0.431373</td><td>1</td></tr>
+<tr><td>นครปฐม</td><td>บางปลา</td><td>บางเลน</td><td>6552</td><td>4968</td><td>11520</td><td>0.56875</td><td>0.43125</td><td>1</td></tr>
+<tr><td>ร้อยเอ็ด</td><td>เชียงขวัญ</td><td>เชียงขวัญ</td><td>4034</td><td>3047</td><td>7081</td><td>0.569694</td><td>0.430306</td><td>1</td></tr>
+<tr><td>สุโขทัย</td><td>หาดเสี้ยว</td><td>ศรีสัชนาลัย</td><td>10285</td><td>7746</td><td>18031</td><td>0.570407</td><td>0.429593</td><td>1</td></tr>
+<tr><td>ราชบุรี</td><td>ดำเนินสะดวก</td><td>ดำเนินสะดวก</td><td>6617</td><td>4959</td><td>11576</td><td>0.571614</td><td>0.428386</td><td>1</td></tr>
+<tr><td>ขอนแก่น</td><td>บ้านไผ่</td><td>บ้านไผ่</td><td>15795</td><td>11816</td><td>27611</td><td>0.572055</td><td>0.427945</td><td>1</td></tr>
+<tr><td>ร้อยเอ็ด</td><td>สีแก้ว</td><td>เมืองร้อยเอ็ด</td><td>3210</td><td>2398</td><td>5608</td><td>0.572397</td><td>0.427603</td><td>1</td></tr>
+<tr><td>หนองบัวลำภู</td><td>โนนสัง</td><td>โนนสัง</td><td>8283</td><td>6118</td><td>14401</td><td>0.575168</td><td>0.424832</td><td>1</td></tr>
+<tr><td>นราธิวาส</td><td>ละหาร</td><td>ยี่งอ</td><td>34</td><td>25</td><td>59</td><td>0.576271</td><td>0.423729</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>แหลมโพธิ์</td><td>ยะหริ่ง</td><td>9098</td><td>6643</td><td>15741</td><td>0.577981</td><td>0.422019</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>เชิงดอย</td><td>ดอยสะเก็ด</td><td>1245</td><td>909</td><td>2154</td><td>0.577994</td><td>0.422006</td><td>1</td></tr>
+<tr><td>ลำปาง</td><td>เวียงเหนือ</td><td>เมืองลำปาง</td><td>987</td><td>718</td><td>1705</td><td>0.578886</td><td>0.421114</td><td>1</td></tr>
+<tr><td>ร้อยเอ็ด</td><td>เมืองไพร</td><td>เสลภูมิ</td><td>3780</td><td>2749</td><td>6529</td><td>0.578955</td><td>0.421045</td><td>1</td></tr>
+<tr><td>ชัยนาท</td><td>วัดสิงห์</td><td>วัดสิงห์</td><td>1366</td><td>989</td><td>2355</td><td>0.580042</td><td>0.419958</td><td>1</td></tr>
+<tr><td>ฉะเชิงเทรา</td><td>คลองหลวงแพ่ง</td><td>เมืองฉะเชิงเทรา</td><td>3238</td><td>2330</td><td>5568</td><td>0.581537</td><td>0.418463</td><td>1</td></tr>
+<tr><td>บุรีรัมย์</td><td>พุทไธสง</td><td>พุทไธสง</td><td>12670</td><td>9005</td><td>21675</td><td>0.584544</td><td>0.415456</td><td>1</td></tr>
+<tr><td>ศรีสะเกษ</td><td>ดู่</td><td>ราษีไศล</td><td>11961</td><td>8488</td><td>20449</td><td>0.584919</td><td>0.415081</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>ท่าทอง</td><td>กาญจนดิษฐ์</td><td>5672</td><td>4018</td><td>9690</td><td>0.585346</td><td>0.414654</td><td>1</td></tr>
+<tr><td>สมุทรปราการ</td><td>คลองสวน</td><td>บางบ่อ</td><td>1965</td><td>1387</td><td>3352</td><td>0.586217</td><td>0.413783</td><td>1</td></tr>
+<tr><td>ราชบุรี</td><td>โพธาราม</td><td>โพธาราม</td><td>13770</td><td>9681</td><td>23451</td><td>0.587182</td><td>0.412818</td><td>1</td></tr>
+<tr><td>เพชรบูรณ์</td><td>หล่มเก่า</td><td>หล่มเก่า</td><td>9091</td><td>6347</td><td>15438</td><td>0.588872</td><td>0.411128</td><td>1</td></tr>
+<tr><td>อุดรธานี</td><td>บ้านผือ</td><td>บ้านผือ</td><td>9813</td><td>6842</td><td>16655</td><td>0.589192</td><td>0.410808</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>สันทรายหลวง</td><td>สันทราย</td><td>526</td><td>364</td><td>890</td><td>0.591011</td><td>0.408989</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>เจ้าเจ็ด</td><td>เสนา</td><td>9458</td><td>6545</td><td>16003</td><td>0.591014</td><td>0.408986</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>ตะโละกาโปร์</td><td>ยะหริ่ง</td><td>4634</td><td>3195</td><td>7829</td><td>0.591902</td><td>0.408098</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>ยี่สาร</td><td>อัมพวา</td><td>3494</td><td>2406</td><td>5900</td><td>0.592203</td><td>0.407797</td><td>1</td></tr>
+<tr><td>บึงกาฬ</td><td>กุดทิง</td><td>เมืองบึงกาฬ</td><td>3032</td><td>2086</td><td>5118</td><td>0.592419</td><td>0.407581</td><td>1</td></tr>
+<tr><td>จันทบุรี</td><td>พลิ้ว</td><td>แหลมสิงห์</td><td>1200</td><td>819</td><td>2019</td><td>0.594354</td><td>0.405646</td><td>1</td></tr>
+<tr><td>กำแพงเพชร</td><td>นครชุม</td><td>เมืองกำแพงเพชร</td><td>8801</td><td>5898</td><td>14699</td><td>0.598748</td><td>0.401252</td><td>1</td></tr>
+<tr><td>ชัยภูมิ</td><td>บ้านเขว้า</td><td>บ้านเขว้า</td><td>4142</td><td>2753</td><td>6895</td><td>0.600725</td><td>0.399275</td><td>1</td></tr>
+<tr><td>เลย</td><td>ปากชม</td><td>ปากชม</td><td>11585</td><td>7673</td><td>19258</td><td>0.601568</td><td>0.398432</td><td>1</td></tr>
+<tr><td>เพชรบุรี</td><td>เขาย้อย</td><td>เขาย้อย</td><td>3101</td><td>2052</td><td>5153</td><td>0.601785</td><td>0.398215</td><td>1</td></tr>
+<tr><td>เพชรบุรี</td><td>สองพี่น้อง</td><td>แก่งกระจาน</td><td>5375</td><td>3553</td><td>8928</td><td>0.602039</td><td>0.397961</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>แหลมโพธิ์</td><td>ยะหริ่ง</td><td>6338</td><td>4183</td><td>10521</td><td>0.602414</td><td>0.397586</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>บ้านแม</td><td>สันป่าตอง</td><td>1802</td><td>1176</td><td>2978</td><td>0.605104</td><td>0.394896</td><td>1</td></tr>
+<tr><td>สิงห์บุรี</td><td>พรหมบุรี</td><td>พรหมบุรี</td><td>1369</td><td>887</td><td>2256</td><td>0.606826</td><td>0.393174</td><td>1</td></tr>
+<tr><td>ชัยนาท</td><td>มะขามเฒ่า</td><td>วัดสิงห์</td><td>2157</td><td>1394</td><td>3551</td><td>0.607435</td><td>0.392565</td><td>1</td></tr>
+<tr><td>พังงา</td><td>เกาะพระทอง</td><td>คุระบุรี</td><td>62</td><td>40</td><td>102</td><td>0.607843</td><td>0.392157</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>ศรีดอนชัย</td><td>เชียงของ</td><td>4764</td><td>3068</td><td>7832</td><td>0.608274</td><td>0.391726</td><td>1</td></tr>
+<tr><td>ชัยภูมิ</td><td>ในเมือง</td><td>เมืองชัยภูมิ</td><td>1574</td><td>1003</td><td>2577</td><td>0.610788</td><td>0.389212</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>ก้านเหลือง</td><td>นาแก</td><td>2565</td><td>1621</td><td>4186</td><td>0.612757</td><td>0.387243</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>ตันหยงลุโละ</td><td>เมืองปัตตานี</td><td>1610</td><td>1016</td><td>2626</td><td>0.6131</td><td>0.3869</td><td>1</td></tr>
+<tr><td>ประจวบคีรีขันธ์</td><td>คลองวาฬ</td><td>เมืองประจวบคีรีขันธ์</td><td>2242</td><td>1413</td><td>3655</td><td>0.613406</td><td>0.386594</td><td>1</td></tr>
+<tr><td>อุดรธานี</td><td>ศรีธาตุ</td><td>ศรีธาตุ</td><td>4202</td><td>2636</td><td>6838</td><td>0.614507</td><td>0.385493</td><td>1</td></tr>
+<tr><td>ฉะเชิงเทรา</td><td>คลองเปร็ง</td><td>เมืองฉะเชิงเทรา</td><td>3556</td><td>2208</td><td>5764</td><td>0.616933</td><td>0.383067</td><td>1</td></tr>
+<tr><td>ขอนแก่น</td><td>ดงเมืองเอม</td><td>เขาสวนกวาง</td><td>41914</td><td>25877</td><td>67791</td><td>0.618283</td><td>0.381717</td><td>1</td></tr>
+<tr><td>ประจวบคีรีขันธ์</td><td>กำเนิดนพคุณ</td><td>บางสะพาน</td><td>3483</td><td>2148</td><td>5631</td><td>0.61854</td><td>0.38146</td><td>1</td></tr>
+<tr><td>แพร่</td><td>บ้านเวียง</td><td>ร้องกวาง</td><td>1410</td><td>869</td><td>2279</td><td>0.618692</td><td>0.381308</td><td>1</td></tr>
+<tr><td>มุกดาหาร</td><td>ป่งขาม</td><td>หว้านใหญ่</td><td>4062</td><td>2462</td><td>6524</td><td>0.622624</td><td>0.377376</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>แม่ยาว</td><td>ปางมะผ้า</td><td>362</td><td>218</td><td>580</td><td>0.624138</td><td>0.375862</td><td>1</td></tr>
+<tr><td>ราชบุรี</td><td>บางแพ</td><td>บางแพ</td><td>617</td><td>370</td><td>987</td><td>0.625127</td><td>0.374873</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>อัมพวา</td><td>อัมพวา</td><td>7931</td><td>4751</td><td>12682</td><td>0.625375</td><td>0.374625</td><td>1</td></tr>
+<tr><td>มุกดาหาร</td><td>โพธิ์ไทร</td><td>ดอนตาล</td><td>4963</td><td>2971</td><td>7934</td><td>0.625536</td><td>0.374464</td><td>1</td></tr>
+<tr><td>กาญจนบุรี</td><td>หนองลู</td><td>สังขละบุรี</td><td>8317</td><td>4944</td><td>13261</td><td>0.627177</td><td>0.372823</td><td>1</td></tr>
+<tr><td>พัทลุง</td><td>ลำปำ</td><td>เมืองพัทลุง</td><td>720</td><td>428</td><td>1148</td><td>0.627178</td><td>0.372822</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>ไชยบุรี</td><td>ท่าอุเทน</td><td>6478</td><td>3850</td><td>10328</td><td>0.627227</td><td>0.372773</td><td>1</td></tr>
+<tr><td>ศรีสะเกษ</td><td>เมืองแคน</td><td>ราษีไศล</td><td>5668</td><td>3365</td><td>9033</td><td>0.627477</td><td>0.372523</td><td>1</td></tr>
+<tr><td>อุทัยธานี</td><td>บ้านเก่า</td><td>หนองฉาง</td><td>11526</td><td>6825</td><td>18351</td><td>0.628086</td><td>0.371914</td><td>1</td></tr>
+<tr><td>จันทบุรี</td><td>ขลุง</td><td>ขลุง</td><td>14614</td><td>8620</td><td>23234</td><td>0.628992</td><td>0.371008</td><td>1</td></tr>
+<tr><td>นนทบุรี</td><td>บางสีทอง</td><td>บางกรวย</td><td>58341</td><td>34306</td><td>92647</td><td>0.629713</td><td>0.370287</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>บ้านโป่ง</td><td>เชียงแสน</td><td>16291</td><td>9549</td><td>25840</td><td>0.630457</td><td>0.369543</td><td>1</td></tr>
+<tr><td>ร้อยเอ็ด</td><td>สระคู</td><td>สุวรรณภูมิ</td><td>3616</td><td>2119</td><td>5735</td><td>0.630514</td><td>0.369486</td><td>1</td></tr>
+<tr><td>ร้อยเอ็ด</td><td>ธวัชบุรี</td><td>ธวัชบุรี</td><td>3901</td><td>2278</td><td>6179</td><td>0.631332</td><td>0.368668</td><td>1</td></tr>
+<tr><td>ร้อยเอ็ด</td><td>สีแก้ว</td><td>จังหาร</td><td>2256</td><td>1306</td><td>3562</td><td>0.633352</td><td>0.366648</td><td>1</td></tr>
+<tr><td>สิงห์บุรี</td><td>บ้านแป้ง</td><td>พรหมบุรี</td><td>2022</td><td>1159</td><td>3181</td><td>0.635649</td><td>0.364351</td><td>1</td></tr>
+<tr><td>ประจวบคีรีขันธ์</td><td>ไร่เก่า</td><td>สามร้อยยอด</td><td>6660</td><td>3722</td><td>10382</td><td>0.641495</td><td>0.358505</td><td>1</td></tr>
+<tr><td>เพชรบูรณ์</td><td>เข็กน้อย</td><td>เขาค้อ</td><td>25086</td><td>13882</td><td>38968</td><td>0.643759</td><td>0.356241</td><td>1</td></tr>
+<tr><td>พิษณุโลก</td><td>พรหมพิราม</td><td>พรหมพิราม</td><td>2149</td><td>1188</td><td>3337</td><td>0.643992</td><td>0.356008</td><td>1</td></tr>
+<tr><td>แพร่</td><td>บ้านปิน</td><td>ลอง</td><td>2076</td><td>1146</td><td>3222</td><td>0.64432</td><td>0.35568</td><td>1</td></tr>
+<tr><td>ปทุมธานี</td><td>พืชอุดม</td><td>ลำลูกกา</td><td>1470</td><td>804</td><td>2274</td><td>0.646438</td><td>0.353562</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>บ้านกรด</td><td>บางปะอิน</td><td>12113</td><td>6616</td><td>18729</td><td>0.646751</td><td>0.353249</td><td>1</td></tr>
+<tr><td>มุกดาหาร</td><td>บ้านเป้า</td><td>หนองสูง</td><td>2735</td><td>1489</td><td>4224</td><td>0.647491</td><td>0.352509</td><td>1</td></tr>
+<tr><td>พัทลุง</td><td>เขาชัยสน</td><td>เขาชัยสน</td><td>2884</td><td>1566</td><td>4450</td><td>0.64809</td><td>0.35191</td><td>1</td></tr>
+<tr><td>เลย</td><td>นาอ้อ</td><td>เมืองเลย</td><td>7281</td><td>3888</td><td>11169</td><td>0.651894</td><td>0.348106</td><td>1</td></tr>
+<tr><td>กาฬสินธุ์</td><td>สงเปลือย</td><td>นามน</td><td>8089</td><td>4316</td><td>12405</td><td>0.652076</td><td>0.347924</td><td>1</td></tr>
+<tr><td>จันทบุรี</td><td>บางกะจะ</td><td>เมืองจันทบุรี</td><td>4214</td><td>2245</td><td>6459</td><td>0.652423</td><td>0.347577</td><td>1</td></tr>
+<tr><td>สกลนคร</td><td>เชียงเครือ</td><td>เมืองสกลนคร</td><td>17941</td><td>9479</td><td>27420</td><td>0.654303</td><td>0.345697</td><td>1</td></tr>
+<tr><td>มหาสารคาม</td><td>เขวา</td><td>เมืองมหาสารคาม</td><td>1376</td><td>720</td><td>2096</td><td>0.656489</td><td>0.343511</td><td>1</td></tr>
+<tr><td>ราชบุรี</td><td>บ้านเลือก</td><td>โพธาราม</td><td>1704</td><td>889</td><td>2593</td><td>0.657154</td><td>0.342846</td><td>1</td></tr>
+<tr><td>บึงกาฬ</td><td>บึงโขงหลง</td><td>บึงโขงหลง</td><td>5607</td><td>2919</td><td>8526</td><td>0.657635</td><td>0.342365</td><td>1</td></tr>
+<tr><td>นครสวรรค์</td><td>เก้าเลี้ยว</td><td>เก้าเลี้ยว</td><td>3346</td><td>1739</td><td>5085</td><td>0.658014</td><td>0.341986</td><td>1</td></tr>
+<tr><td>ราชบุรี</td><td>เจ็ดเสมียน</td><td>โพธาราม</td><td>4524</td><td>2316</td><td>6840</td><td>0.661404</td><td>0.338596</td><td>1</td></tr>
+<tr><td>กาฬสินธุ์</td><td>สงเปลือย</td><td>นามน</td><td>2118</td><td>1084</td><td>3202</td><td>0.661462</td><td>0.338538</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>ท่าวังตาล</td><td>สารภี</td><td>34869</td><td>17785</td><td>52654</td><td>0.662229</td><td>0.337771</td><td>1</td></tr>
+<tr><td>อุดรธานี</td><td>บ้านดุง</td><td>บ้านดุง</td><td>5523</td><td>2815</td><td>8338</td><td>0.662389</td><td>0.337611</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>นาสาร</td><td>นาสาร</td><td>2054</td><td>1046</td><td>3100</td><td>0.662581</td><td>0.337419</td><td>1</td></tr>
+<tr><td>เลย</td><td>เชียงคาน</td><td>เชียงคาน</td><td>3079</td><td>1566</td><td>4645</td><td>0.662863</td><td>0.337137</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>กระเทียม</td><td>สังขะ</td><td>7372</td><td>3732</td><td>11104</td><td>0.663905</td><td>0.336095</td><td>1</td></tr>
+<tr><td>ตรัง</td><td>ท่าข้าม</td><td>ปะเหลียน</td><td>196</td><td>99</td><td>295</td><td>0.664407</td><td>0.335593</td><td>1</td></tr>
+<tr><td>มหาสารคาม</td><td>เขวา</td><td>เมืองมหาสารคาม</td><td>5265</td><td>2651</td><td>7916</td><td>0.665109</td><td>0.334891</td><td>1</td></tr>
+<tr><td>ปราจีนบุรี</td><td>โคกปีบ</td><td>ศรีมโหสถ</td><td>2219</td><td>1110</td><td>3329</td><td>0.666567</td><td>0.333433</td><td>1</td></tr>
+<tr><td>นครศรีธรรมราช</td><td>คลัง</td><td>เมืองนครศรีธรรมราช</td><td>200</td><td>100</td><td>300</td><td>0.666667</td><td>0.333333</td><td>1</td></tr>
+<tr><td>ชัยภูมิ</td><td>วะตะแบก</td><td>เทพสถิต</td><td>4210</td><td>2092</td><td>6302</td><td>0.668042</td><td>0.331958</td><td>1</td></tr>
+<tr><td>สกลนคร</td><td>พรรณา</td><td>พรรณานิคม</td><td>20608</td><td>10203</td><td>30811</td><td>0.668852</td><td>0.331148</td><td>1</td></tr>
+<tr><td>ยโสธร</td><td>กู่จาน</td><td>คำเขื่อนแก้ว</td><td>6382</td><td>3158</td><td>9540</td><td>0.668973</td><td>0.331027</td><td>1</td></tr>
+<tr><td>พัทลุง</td><td>พนางตุง</td><td>ควนขนุน</td><td>3620</td><td>1788</td><td>5408</td><td>0.669379</td><td>0.330621</td><td>1</td></tr>
+<tr><td>กาฬสินธุ์</td><td>หนองบัว</td><td>หนองกุงศรี</td><td>1532</td><td>755</td><td>2287</td><td>0.669873</td><td>0.330127</td><td>1</td></tr>
+<tr><td>สตูล</td><td>ปากน้ำ</td><td>ละงู</td><td>16489</td><td>8103</td><td>24592</td><td>0.670503</td><td>0.329497</td><td>1</td></tr>
+<tr><td>ปทุมธานี</td><td>บึงทองหลาง</td><td>ลำลูกกา</td><td>171</td><td>84</td><td>255</td><td>0.670588</td><td>0.329412</td><td>1</td></tr>
+<tr><td>น่าน</td><td>ทุ่งช้าง</td><td>ทุ่งช้าง</td><td>2009</td><td>975</td><td>2984</td><td>0.673257</td><td>0.326743</td><td>1</td></tr>
+<tr><td>ขอนแก่น</td><td>เมืองเพีย</td><td>บ้านไผ่</td><td>6298</td><td>3035</td><td>9333</td><td>0.67481</td><td>0.32519</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>พุมเรียง</td><td>ไชยา</td><td>3166</td><td>1514</td><td>4680</td><td>0.676496</td><td>0.323504</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>ช่างปี่</td><td>ศรีขรภูมิ</td><td>6967</td><td>3312</td><td>10279</td><td>0.67779</td><td>0.32221</td><td>1</td></tr>
+<tr><td>ตรัง</td><td>ห้วยยอด</td><td>ห้วยยอด</td><td>9280</td><td>4394</td><td>13674</td><td>0.67866</td><td>0.32134</td><td>1</td></tr>
+<tr><td>ประจวบคีรีขันธ์</td><td>สามร้อยยอด</td><td>สามร้อยยอด</td><td>5799</td><td>2737</td><td>8536</td><td>0.679358</td><td>0.320642</td><td>1</td></tr>
+<tr><td>ปทุมธานี</td><td>คลองสาม</td><td>คลองหลวง</td><td>2561</td><td>1207</td><td>3768</td><td>0.679671</td><td>0.320329</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>ศรีสงคราม</td><td>ศรีสงคราม</td><td>21646</td><td>10200</td><td>31846</td><td>0.679709</td><td>0.320291</td><td>1</td></tr>
+<tr><td>นครสวรรค์</td><td>พรหมนิมิต</td><td>ตาคลี</td><td>13183</td><td>6188</td><td>19371</td><td>0.680553</td><td>0.319447</td><td>1</td></tr>
+<tr><td>ระยอง</td><td>กระเฉด</td><td>เมืองระยอง</td><td>3228</td><td>1504</td><td>4732</td><td>0.682164</td><td>0.317836</td><td>1</td></tr>
+<tr><td>ร้อยเอ็ด</td><td>ท่าม่วง</td><td>เสลภูมิ</td><td>4523</td><td>2086</td><td>6609</td><td>0.68437</td><td>0.31563</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>สวนหลวง</td><td>อัมพวา</td><td>5701</td><td>2625</td><td>8326</td><td>0.684723</td><td>0.315277</td><td>1</td></tr>
+<tr><td>สกลนคร</td><td>เชียงเครือ</td><td>เมืองสกลนคร</td><td>12720</td><td>5790</td><td>18510</td><td>0.687196</td><td>0.312804</td><td>1</td></tr>
+<tr><td>ฉะเชิงเทรา</td><td>บึงน้ำรักษ์</td><td>บางน้ำเปรี้ยว</td><td>5221</td><td>2366</td><td>7587</td><td>0.688151</td><td>0.311849</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>ลาดชิด</td><td>ผักไห่</td><td>11944</td><td>5396</td><td>17340</td><td>0.688812</td><td>0.311188</td><td>1</td></tr>
+<tr><td>ประจวบคีรีขันธ์</td><td>ปราณบุรี</td><td>ปราณบุรี</td><td>3662</td><td>1639</td><td>5301</td><td>0.690813</td><td>0.309187</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>โพธิ์พระยา</td><td>เมืองสุพรรณบุรี</td><td>5717</td><td>2556</td><td>8273</td><td>0.691043</td><td>0.308957</td><td>1</td></tr>
+<tr><td>สิงห์บุรี</td><td>แม่ลา</td><td>บางระจัน</td><td>4707</td><td>2091</td><td>6798</td><td>0.69241</td><td>0.30759</td><td>1</td></tr>
+<tr><td>ลำปาง</td><td>นาครัว</td><td>แม่ทะ</td><td>5500</td><td>2437</td><td>7937</td><td>0.692957</td><td>0.307043</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>ขนอนหลวง</td><td>บางปะอิน</td><td>3411</td><td>1503</td><td>4914</td><td>0.694139</td><td>0.305861</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>ไชยบุรี</td><td>ท่าอุเทน</td><td>11703</td><td>5131</td><td>16834</td><td>0.6952</td><td>0.3048</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>คำพี้</td><td>นาแก</td><td>3589</td><td>1542</td><td>5131</td><td>0.699474</td><td>0.300526</td><td>1</td></tr>
+<tr><td>ชัยนาท</td><td>ธรรมามูล</td><td>เมืองชัยนาท</td><td>10250</td><td>4392</td><td>14642</td><td>0.700041</td><td>0.299959</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>ท่าขนอน</td><td>คีรีรัฐนิคม</td><td>29808</td><td>12680</td><td>42488</td><td>0.701563</td><td>0.298437</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>ตรึม</td><td>ศรีขรภูมิ</td><td>7543</td><td>3206</td><td>10749</td><td>0.70174</td><td>0.29826</td><td>1</td></tr>
+<tr><td>พัทลุง</td><td>มะกอกเหนือ</td><td>ควนขนุน</td><td>2534</td><td>1075</td><td>3609</td><td>0.702134</td><td>0.297866</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>ตลาดไชยา</td><td>ไชยา</td><td>6551</td><td>2774</td><td>9325</td><td>0.70252</td><td>0.29748</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>ท่าค้อ</td><td>เมืองนครพนม</td><td>20243</td><td>8529</td><td>28772</td><td>0.703566</td><td>0.296434</td><td>1</td></tr>
+<tr><td>สุโขทัย</td><td>ศรีสัชนาลัย</td><td>ศรีสัชนาลัย</td><td>5603</td><td>2357</td><td>7960</td><td>0.703894</td><td>0.296106</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>ยะวึก</td><td>ชุมพลบุรี</td><td>11741</td><td>4931</td><td>16672</td><td>0.704235</td><td>0.295765</td><td>1</td></tr>
+<tr><td>เลย</td><td>ปากตม</td><td>เชียงคาน</td><td>3495</td><td>1466</td><td>4961</td><td>0.704495</td><td>0.295505</td><td>1</td></tr>
+<tr><td>ขอนแก่น</td><td>บ้านขาม</td><td>น้ำพอง</td><td>3630</td><td>1517</td><td>5147</td><td>0.705265</td><td>0.294735</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>ยางเนิ้ง</td><td>สารภี</td><td>205</td><td>85</td><td>290</td><td>0.706897</td><td>0.293103</td><td>1</td></tr>
+<tr><td>พิษณุโลก</td><td>นครไทย</td><td>นครไทย</td><td>14851</td><td>6154</td><td>21005</td><td>0.707022</td><td>0.292978</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>ระแงง</td><td>ศรีขรภูมิ</td><td>8778</td><td>3632</td><td>12410</td><td>0.707333</td><td>0.292667</td><td>1</td></tr>
+<tr><td>พิจิตร</td><td>วังกรด</td><td>เมืองพิจิตร</td><td>9638</td><td>3983</td><td>13621</td><td>0.707584</td><td>0.292416</td><td>1</td></tr>
+<tr><td>เพชรบุรี</td><td>ไร่สะท้อน</td><td>บ้านลาด</td><td>36505</td><td>14966</td><td>51471</td><td>0.709234</td><td>0.290766</td><td>1</td></tr>
+<tr><td>กระบี่</td><td>เกาะลันตาใหญ่</td><td>เกาะลันตา</td><td>166</td><td>68</td><td>234</td><td>0.709402</td><td>0.290598</td><td>1</td></tr>
+<tr><td>พิษณุโลก</td><td>วัดพริก</td><td>เมืองพิษณุโลก</td><td>9347</td><td>3820</td><td>13167</td><td>0.709881</td><td>0.290119</td><td>1</td></tr>
+<tr><td>พัทลุง</td><td>ลำปำ</td><td>เมืองพัทลุง</td><td>1747</td><td>697</td><td>2444</td><td>0.714812</td><td>0.285188</td><td>1</td></tr>
+<tr><td>เพชรบูรณ์</td><td>สะเดียง</td><td>เมืองเพชรบูรณ์</td><td>25909</td><td>10148</td><td>36057</td><td>0.718557</td><td>0.281443</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>ลีเล็ด</td><td>พุนพิน</td><td>28205</td><td>10950</td><td>39155</td><td>0.720342</td><td>0.279658</td><td>1</td></tr>
+<tr><td>อุตรดิตถ์</td><td>ในเมือง</td><td>พิชัย</td><td>4660</td><td>1809</td><td>6469</td><td>0.720359</td><td>0.279641</td><td>1</td></tr>
+<tr><td>เพชรบุรี</td><td>หนองปรง</td><td>เขาย้อย</td><td>3992</td><td>1543</td><td>5535</td><td>0.721229</td><td>0.278771</td><td>1</td></tr>
+<tr><td>สกลนคร</td><td>โพธิไพศาล</td><td>กุสุมาลย์</td><td>6278</td><td>2422</td><td>8700</td><td>0.721609</td><td>0.278391</td><td>1</td></tr>
+<tr><td>ตราด</td><td>หนองโสน</td><td>เมืองตราด</td><td>1399</td><td>537</td><td>1936</td><td>0.722624</td><td>0.277376</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>แม่ฟ้าหลวง</td><td>แม่ฟ้าหลวง</td><td>2290</td><td>877</td><td>3167</td><td>0.723082</td><td>0.276918</td><td>1</td></tr>
+<tr><td>บึงกาฬ</td><td>บุ่งคล้า</td><td>บุ่งคล้า</td><td>19896</td><td>7547</td><td>27443</td><td>0.724994</td><td>0.275006</td><td>1</td></tr>
+<tr><td>สตูล</td><td>เกาะสาหร่าย</td><td>เมืองสตูล</td><td>17740</td><td>6717</td><td>24457</td><td>0.725355</td><td>0.274645</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>รั้วใหญ่</td><td>เมืองสุพรรณบุรี</td><td>2953</td><td>1117</td><td>4070</td><td>0.725553</td><td>0.274447</td><td>1</td></tr>
+<tr><td>นครนายก</td><td>เกาะหวาย</td><td>ปากพลี</td><td>6658</td><td>2509</td><td>9167</td><td>0.726301</td><td>0.273699</td><td>1</td></tr>
+<tr><td>แพร่</td><td>วังชิ้น</td><td>วังชิ้น</td><td>17766</td><td>6647</td><td>24413</td><td>0.727727</td><td>0.272273</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>ปะเสยะวอ</td><td>สายบุรี</td><td>12810</td><td>4775</td><td>17585</td><td>0.728462</td><td>0.271538</td><td>1</td></tr>
+<tr><td>ราชบุรี</td><td>ประสาทสิทธิ์</td><td>ดำเนินสะดวก</td><td>12000</td><td>4433</td><td>16433</td><td>0.730238</td><td>0.269762</td><td>1</td></tr>
+<tr><td>กาฬสินธุ์</td><td>เหนือ</td><td>เมืองกาฬสินธุ์</td><td>6818</td><td>2516</td><td>9334</td><td>0.730448</td><td>0.269552</td><td>1</td></tr>
+<tr><td>ลำปาง</td><td>ลำปางหลวง</td><td>เกาะคา</td><td>5849</td><td>2139</td><td>7988</td><td>0.732223</td><td>0.267777</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>ภาชี</td><td>ภาชี</td><td>28819</td><td>10453</td><td>39272</td><td>0.733831</td><td>0.266169</td><td>1</td></tr>
+<tr><td>กาญจนบุรี</td><td>นาสวน</td><td>ศรีสวัสดิ์</td><td>35028</td><td>12367</td><td>47395</td><td>0.739065</td><td>0.260935</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>แหลมใหญ่</td><td>เมืองสมุทรสงคราม</td><td>8278</td><td>2920</td><td>11198</td><td>0.739239</td><td>0.260761</td><td>1</td></tr>
+<tr><td>อุบลราชธานี</td><td>ดอนมดแดง</td><td>ดอนมดแดง</td><td>19921</td><td>7024</td><td>26945</td><td>0.739321</td><td>0.260679</td><td>1</td></tr>
+<tr><td>ปทุมธานี</td><td>ลำผักกูด</td><td>ธัญบุรี</td><td>447</td><td>157</td><td>604</td><td>0.740066</td><td>0.259934</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>สันทรายหลวง</td><td>สันทราย</td><td>2200</td><td>771</td><td>2971</td><td>0.740491</td><td>0.259509</td><td>1</td></tr>
+<tr><td>เลย</td><td>เขาแก้ว</td><td>เชียงคาน</td><td>4038</td><td>1413</td><td>5451</td><td>0.740782</td><td>0.259218</td><td>1</td></tr>
+<tr><td>มหาสารคาม</td><td>หัวขวาง</td><td>โกสุมพิสัย</td><td>16002</td><td>5589</td><td>21591</td><td>0.741142</td><td>0.258858</td><td>1</td></tr>
+<tr><td>พิษณุโลก</td><td>หัวรอ</td><td>เมืองพิษณุโลก</td><td>6268</td><td>2185</td><td>8453</td><td>0.741512</td><td>0.258488</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>เปาะเส้ง</td><td>เมืองยะลา</td><td>10976</td><td>3819</td><td>14795</td><td>0.741872</td><td>0.258128</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>ริมโขง</td><td>เชียงของ</td><td>3015</td><td>1048</td><td>4063</td><td>0.742063</td><td>0.257937</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>บาโงยซิแน</td><td>ยะหา</td><td>5925</td><td>2023</td><td>7948</td><td>0.745471</td><td>0.254529</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>แม่ไร่</td><td>แม่จัน</td><td>13780</td><td>4678</td><td>18458</td><td>0.74656</td><td>0.25344</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>ท่าวังพร้าว</td><td>สันป่าตอง</td><td>568</td><td>189</td><td>757</td><td>0.75033</td><td>0.24967</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>บางช้าง</td><td>อัมพวา</td><td>1470</td><td>486</td><td>1956</td><td>0.751534</td><td>0.248466</td><td>1</td></tr>
+<tr><td>อ่างทอง</td><td>เอกราช</td><td>ป่าโมก</td><td>5670</td><td>1872</td><td>7542</td><td>0.75179</td><td>0.24821</td><td>1</td></tr>
+<tr><td>อุบลราชธานี</td><td>ปะอาว</td><td>เมืองอุบลราชธานี</td><td>24290</td><td>7840</td><td>32130</td><td>0.755991</td><td>0.244009</td><td>1</td></tr>
+<tr><td>ลำพูน</td><td>ห้วยหยาบ</td><td>บ้านธิ</td><td>16047</td><td>5172</td><td>21219</td><td>0.756256</td><td>0.243744</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>คลองน้อย</td><td>เมืองสุราษฎร์ธานี</td><td>69265</td><td>22206</td><td>91471</td><td>0.757235</td><td>0.242765</td><td>1</td></tr>
+<tr><td>มหาสารคาม</td><td>คันธารราษฎร์</td><td>กันทรวิชัย</td><td>18526</td><td>5939</td><td>24465</td><td>0.757245</td><td>0.242755</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>แม่ยาว</td><td>เมืองเชียงราย</td><td>1469</td><td>468</td><td>1937</td><td>0.758389</td><td>0.241611</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>โคกคราม</td><td>บางปลาม้า</td><td>2616</td><td>830</td><td>3446</td><td>0.759141</td><td>0.240859</td><td>1</td></tr>
+<tr><td>พังงา</td><td>บางม่วง</td><td>ตะกั่วป่า</td><td>735</td><td>230</td><td>965</td><td>0.761658</td><td>0.238342</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>บ้านกลาง</td><td>สันป่าตอง</td><td>4149</td><td>1298</td><td>5447</td><td>0.761704</td><td>0.238296</td><td>1</td></tr>
+<tr><td>น่าน</td><td>บ่อเกลือใต้</td><td>บ่อเกลือ</td><td>4145</td><td>1296</td><td>5441</td><td>0.761808</td><td>0.238192</td><td>1</td></tr>
+<tr><td>สุโขทัย</td><td>ทุ่งหลวง</td><td>คีรีมาศ</td><td>17323</td><td>5349</td><td>22672</td><td>0.76407</td><td>0.23593</td><td>1</td></tr>
+<tr><td>พะเยา</td><td>หย่วน</td><td>เชียงคำ</td><td>3233</td><td>998</td><td>4231</td><td>0.764122</td><td>0.235878</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>คลองตะเคียน</td><td>พระนครศรีอยุธยา</td><td>4721</td><td>1451</td><td>6172</td><td>0.764906</td><td>0.235094</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>สลักได</td><td>เมืองสุรินทร์</td><td>5631</td><td>1722</td><td>7353</td><td>0.76581</td><td>0.23419</td><td>1</td></tr>
+<tr><td>บึงกาฬ</td><td>บึงโขงหลง</td><td>บึงโขงหลง</td><td>13130</td><td>3990</td><td>17120</td><td>0.766939</td><td>0.233061</td><td>1</td></tr>
+<tr><td>นครปฐม</td><td>มหาสวัสดิ์</td><td>พุทธมณฑล</td><td>8216</td><td>2422</td><td>10638</td><td>0.772326</td><td>0.227674</td><td>1</td></tr>
+<tr><td>ยโสธร</td><td>ค้อเหนือ</td><td>เมืองยโสธร</td><td>8177</td><td>2408</td><td>10585</td><td>0.772508</td><td>0.227492</td><td>1</td></tr>
+<tr><td>กาฬสินธุ์</td><td>ทุ่งคลอง</td><td>คำม่วง</td><td>11449</td><td>3366</td><td>14815</td><td>0.772798</td><td>0.227202</td><td>1</td></tr>
+<tr><td>พะเยา</td><td>หย่วน</td><td>เชียงคำ</td><td>5119</td><td>1491</td><td>6610</td><td>0.774433</td><td>0.225567</td><td>1</td></tr>
+<tr><td>อ่างทอง</td><td>อินทประมูล</td><td>โพธิ์ทอง</td><td>1811</td><td>525</td><td>2336</td><td>0.775257</td><td>0.224743</td><td>1</td></tr>
+<tr><td>ชลบุรี</td><td>หมอนนาง</td><td>พนัสนิคม</td><td>7516</td><td>2170</td><td>9686</td><td>0.775965</td><td>0.224035</td><td>1</td></tr>
+<tr><td>สมุทรปราการ</td><td>บางน้ำผึ้ง</td><td>พระประแดง</td><td>3702</td><td>1067</td><td>4769</td><td>0.776263</td><td>0.223737</td><td>1</td></tr>
+<tr><td>อุทัยธานี</td><td>โคกหม้อ</td><td>ทัพทัน</td><td>5022</td><td>1447</td><td>6469</td><td>0.776318</td><td>0.223682</td><td>1</td></tr>
+<tr><td>ฉะเชิงเทรา</td><td>บ้านซ่อง</td><td>พนมสารคาม</td><td>16445</td><td>4698</td><td>21143</td><td>0.777799</td><td>0.222201</td><td>1</td></tr>
+<tr><td>กาฬสินธุ์</td><td>คำบง</td><td>ห้วยผึ้ง</td><td>2582</td><td>737</td><td>3319</td><td>0.777945</td><td>0.222055</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>แม่ยาว</td><td>ปางมะผ้า</td><td>1350</td><td>385</td><td>1735</td><td>0.778098</td><td>0.221902</td><td>1</td></tr>
+<tr><td>แพร่</td><td>แม่คำมี</td><td>เมืองแพร่</td><td>5010</td><td>1415</td><td>6425</td><td>0.779767</td><td>0.220233</td><td>1</td></tr>
+<tr><td>ฉะเชิงเทรา</td><td>ท่าถ่าน</td><td>พนมสารคาม</td><td>636</td><td>179</td><td>815</td><td>0.780368</td><td>0.219632</td><td>1</td></tr>
+<tr><td>ปทุมธานี</td><td>คลองพระอุดม</td><td>ลาดหลุมแก้ว</td><td>1694</td><td>476</td><td>2170</td><td>0.780645</td><td>0.219355</td><td>1</td></tr>
+<tr><td>พัทลุง</td><td>ลำปำ</td><td>เมืองพัทลุง</td><td>9243</td><td>2579</td><td>11822</td><td>0.781847</td><td>0.218153</td><td>1</td></tr>
+<tr><td>พะเยา</td><td>บ้านตุ่น</td><td>เมืองพะเยา</td><td>9423</td><td>2569</td><td>11992</td><td>0.785774</td><td>0.214226</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>สุเทพ</td><td>เมืองเชียงใหม่</td><td>2208</td><td>598</td><td>2806</td><td>0.786885</td><td>0.213115</td><td>1</td></tr>
+<tr><td>ภูเก็ต</td><td>ป่าคลอก</td><td>ถลาง</td><td>822</td><td>222</td><td>1044</td><td>0.787356</td><td>0.212644</td><td>1</td></tr>
+<tr><td>น่าน</td><td>ป่าคา</td><td>ท่าวังผา</td><td>1723</td><td>460</td><td>2183</td><td>0.789281</td><td>0.210719</td><td>1</td></tr>
+<tr><td>ลำปาง</td><td>กล้วยแพะ</td><td>เมืองลำปาง</td><td>62798</td><td>16554</td><td>79352</td><td>0.791385</td><td>0.208615</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>โป่งแยง</td><td>แม่ริม</td><td>2247</td><td>586</td><td>2833</td><td>0.793152</td><td>0.206848</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>นาใน</td><td>โพนสวรรค์</td><td>20356</td><td>5308</td><td>25664</td><td>0.793173</td><td>0.206827</td><td>1</td></tr>
+<tr><td>นครนายก</td><td>ปากพลี</td><td>ปากพลี</td><td>2860</td><td>744</td><td>3604</td><td>0.793563</td><td>0.206437</td><td>1</td></tr>
+<tr><td>สุพรรณบุรี</td><td>มะขามล้ม</td><td>บางปลาม้า</td><td>10485</td><td>2709</td><td>13194</td><td>0.794679</td><td>0.205321</td><td>1</td></tr>
+<tr><td>เลย</td><td>เชียงคาน</td><td>เชียงคาน</td><td>3773</td><td>974</td><td>4747</td><td>0.794818</td><td>0.205182</td><td>1</td></tr>
+<tr><td>น่าน</td><td>ป่าคา</td><td>ท่าวังผา</td><td>2132</td><td>549</td><td>2681</td><td>0.795226</td><td>0.204774</td><td>1</td></tr>
+<tr><td>สกลนคร</td><td>โนนหอม</td><td>เมืองสกลนคร</td><td>4448</td><td>1138</td><td>5586</td><td>0.796276</td><td>0.203724</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>บางนกแขวก</td><td>บางคนที</td><td>2326</td><td>595</td><td>2921</td><td>0.796303</td><td>0.203697</td><td>1</td></tr>
+<tr><td>พังงา</td><td>คึกคัก</td><td>ตะกั่วป่า</td><td>205</td><td>52</td><td>257</td><td>0.797665</td><td>0.202335</td><td>1</td></tr>
+<tr><td>พะเยา</td><td>เชียงบาน</td><td>เชียงคำ</td><td>9676</td><td>2449</td><td>12125</td><td>0.798021</td><td>0.201979</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>ปากกราน</td><td>พระนครศรีอยุธยา</td><td>3516</td><td>856</td><td>4372</td><td>0.804209</td><td>0.195791</td><td>1</td></tr>
+<tr><td>ชัยนาท</td><td>ศิลาด่าน</td><td>มโนรมย์</td><td>8379</td><td>2023</td><td>10402</td><td>0.805518</td><td>0.194482</td><td>1</td></tr>
+<tr><td>กาฬสินธุ์</td><td>หนองห้าง</td><td>กุฉินารายณ์</td><td>37627</td><td>9075</td><td>46702</td><td>0.805683</td><td>0.194317</td><td>1</td></tr>
+<tr><td>อุทัยธานี</td><td>ทัพคล้าย</td><td>บ้านไร่</td><td>10839</td><td>2548</td><td>13387</td><td>0.809666</td><td>0.190334</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>เมืองแหง</td><td>เวียงแหง</td><td>3455</td><td>801</td><td>4256</td><td>0.811795</td><td>0.188205</td><td>1</td></tr>
+<tr><td>ลำพูน</td><td>ประตูป่า</td><td>เมืองลำพูน</td><td>2667</td><td>616</td><td>3283</td><td>0.812367</td><td>0.187633</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>บ้านจันทร์</td><td>กัลยานิวัฒนา</td><td>2637</td><td>605</td><td>3242</td><td>0.813387</td><td>0.186613</td><td>1</td></tr>
+<tr><td>ศรีสะเกษ</td><td>เมืองคง</td><td>ราษีไศล</td><td>17540</td><td>3963</td><td>21503</td><td>0.8157</td><td>0.1843</td><td>1</td></tr>
+<tr><td>เพชรบุรี</td><td>บ้านกุ่ม</td><td>เมืองเพชรบุรี</td><td>4514</td><td>1018</td><td>5532</td><td>0.81598</td><td>0.18402</td><td>1</td></tr>
+<tr><td>สุโขทัย</td><td>ลานหอย</td><td>บ้านด่านลานหอย</td><td>6808</td><td>1525</td><td>8333</td><td>0.816993</td><td>0.183007</td><td>1</td></tr>
+<tr><td>นนทบุรี</td><td>เกาะเกร็ด</td><td>ปากเกร็ด</td><td>32514</td><td>7281</td><td>39795</td><td>0.817037</td><td>0.182963</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>เมืองปอน</td><td>ขุนยวม</td><td>4250</td><td>950</td><td>5200</td><td>0.817308</td><td>0.182692</td><td>1</td></tr>
+<tr><td>ปราจีนบุรี</td><td>โคกปีบ</td><td>ศรีมโหสถ</td><td>4496</td><td>1004</td><td>5500</td><td>0.817455</td><td>0.182545</td><td>1</td></tr>
+<tr><td>สตูล</td><td>ทุ่งนุ้ย</td><td>ควนกาหลง</td><td>15865</td><td>3459</td><td>19324</td><td>0.821</td><td>0.179</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>แกใหญ่</td><td>เมืองสุรินทร์</td><td>9809</td><td>2108</td><td>11917</td><td>0.82311</td><td>0.17689</td><td>1</td></tr>
+<tr><td>ลำพูน</td><td>ตะเคียนปม</td><td>ทุ่งหัวช้าง</td><td>30144</td><td>6437</td><td>36581</td><td>0.824034</td><td>0.175966</td><td>1</td></tr>
+<tr><td>สตูล</td><td>ละงู</td><td>ละงู</td><td>16581</td><td>3506</td><td>20087</td><td>0.825459</td><td>0.174541</td><td>1</td></tr>
+<tr><td>สงขลา</td><td>คูขุด</td><td>สทิงพระ</td><td>2175</td><td>459</td><td>2634</td><td>0.82574</td><td>0.17426</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>ห้วยผา</td><td>เมืองแม่ฮ่องสอน</td><td>1924</td><td>402</td><td>2326</td><td>0.827171</td><td>0.172829</td><td>1</td></tr>
+<tr><td>ราชบุรี</td><td>ดอนกรวย</td><td>ดำเนินสะดวก</td><td>4777</td><td>997</td><td>5774</td><td>0.827329</td><td>0.172671</td><td>1</td></tr>
+<tr><td>พระนครศรีอยุธยา</td><td>วัดยม</td><td>บางบาล</td><td>6443</td><td>1335</td><td>7778</td><td>0.828362</td><td>0.171638</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>ห้วยชมพู</td><td>เมืองเชียงราย</td><td>2205</td><td>453</td><td>2658</td><td>0.829571</td><td>0.170429</td><td>1</td></tr>
+<tr><td>อุตรดิตถ์</td><td>ผาจุก</td><td>เมืองอุตรดิตถ์</td><td>59845</td><td>12246</td><td>72091</td><td>0.830131</td><td>0.169869</td><td>1</td></tr>
+<tr><td>จันทบุรี</td><td>หนองบัว</td><td>เมืองจันทบุรี</td><td>8282</td><td>1694</td><td>9976</td><td>0.830192</td><td>0.169808</td><td>1</td></tr>
+<tr><td>ลำพูน</td><td>แม่แรง</td><td>ป่าซาง</td><td>4616</td><td>937</td><td>5553</td><td>0.831262</td><td>0.168738</td><td>1</td></tr>
+<tr><td>อุตรดิตถ์</td><td>ท่าเสา</td><td>เมืองอุตรดิตถ์</td><td>10102</td><td>2032</td><td>12134</td><td>0.832537</td><td>0.167463</td><td>1</td></tr>
+<tr><td>ตรัง</td><td>ท่าข้าม</td><td>ปะเหลียน</td><td>37125</td><td>7402</td><td>44527</td><td>0.833764</td><td>0.166236</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>นองควาย</td><td>หางดง</td><td>2228</td><td>443</td><td>2671</td><td>0.834145</td><td>0.165855</td><td>1</td></tr>
+<tr><td>พะเยา</td><td>สบบง</td><td>ภูซาง</td><td>12667</td><td>2482</td><td>15149</td><td>0.836161</td><td>0.163839</td><td>1</td></tr>
+<tr><td>ขอนแก่น</td><td>น้ำพอง</td><td>น้ำพอง</td><td>5543</td><td>1082</td><td>6625</td><td>0.836679</td><td>0.163321</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>บางแค</td><td>อัมพวา</td><td>4158</td><td>792</td><td>4950</td><td>0.84</td><td>0.16</td><td>1</td></tr>
+<tr><td>อุดรธานี</td><td>นายูง</td><td>นายูง</td><td>14256</td><td>2714</td><td>16970</td><td>0.840071</td><td>0.159929</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>แม่งอน</td><td>ฝาง</td><td>3872</td><td>725</td><td>4597</td><td>0.842288</td><td>0.157712</td><td>1</td></tr>
+<tr><td>นครนายก</td><td>หนองแสง</td><td>ปากพลี</td><td>7522</td><td>1398</td><td>8920</td><td>0.843274</td><td>0.156726</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>ร้องวัวแดง</td><td>สันกำแพง</td><td>13906</td><td>2534</td><td>16440</td><td>0.845864</td><td>0.154136</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>เวียงกาหลง</td><td>เวียงป่าเป้า</td><td>1414</td><td>257</td><td>1671</td><td>0.8462</td><td>0.1538</td><td>1</td></tr>
+<tr><td>ตราด</td><td>เกาะช้างใต้</td><td>เกาะช้าง</td><td>3083</td><td>559</td><td>3642</td><td>0.846513</td><td>0.153487</td><td>1</td></tr>
+<tr><td>สตูล</td><td>ควนโดน</td><td>ควนโดน</td><td>3912</td><td>687</td><td>4599</td><td>0.85062</td><td>0.14938</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>จอมพระ</td><td>จอมพระ</td><td>13304</td><td>2330</td><td>15634</td><td>0.850966</td><td>0.149034</td><td>1</td></tr>
+<tr><td>ปัตตานี</td><td>ท่ากำชำ</td><td>หนองจิก</td><td>4217</td><td>724</td><td>4941</td><td>0.853471</td><td>0.146529</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>หมอกจำแป่</td><td>เมืองแม่ฮ่องสอน</td><td>11693</td><td>2004</td><td>13697</td><td>0.853691</td><td>0.146309</td><td>1</td></tr>
+<tr><td>พิษณุโลก</td><td>งิ้วงาม</td><td>เมืองพิษณุโลก</td><td>14784</td><td>2492</td><td>17276</td><td>0.855754</td><td>0.144246</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>อัมพวา</td><td>อัมพวา</td><td>7442</td><td>1192</td><td>8634</td><td>0.861941</td><td>0.138059</td><td>1</td></tr>
+<tr><td>ตรัง</td><td>ท่าข้าม</td><td>ปะเหลียน</td><td>4592</td><td>734</td><td>5326</td><td>0.862186</td><td>0.137814</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>ดม</td><td>สังขะ</td><td>7652</td><td>1223</td><td>8875</td><td>0.862197</td><td>0.137803</td><td>1</td></tr>
+<tr><td>สุโขทัย</td><td>กง</td><td>กงไกรลาศ</td><td>6423</td><td>1006</td><td>7429</td><td>0.864585</td><td>0.135415</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>แม่เงา</td><td>ขุนยวม</td><td>4644</td><td>727</td><td>5371</td><td>0.864643</td><td>0.135357</td><td>1</td></tr>
+<tr><td>กาฬสินธุ์</td><td>บัวขาว</td><td>กุฉินารายณ์</td><td>5051</td><td>781</td><td>5832</td><td>0.866084</td><td>0.133916</td><td>1</td></tr>
+<tr><td>ลำพูน</td><td>บ้านเรือน</td><td>ป่าซาง</td><td>5509</td><td>849</td><td>6358</td><td>0.866467</td><td>0.133533</td><td>1</td></tr>
+<tr><td>อำนาจเจริญ</td><td>เค็งใหญ่</td><td>หัวตะพาน</td><td>10364</td><td>1570</td><td>11934</td><td>0.868443</td><td>0.131557</td><td>1</td></tr>
+<tr><td>อุตรดิตถ์</td><td>ศรีพนมมาศ</td><td>ลับแล</td><td>68833</td><td>10391</td><td>79224</td><td>0.86884</td><td>0.13116</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>ตาเนาะแมเราะ</td><td>เบตง</td><td>385</td><td>57</td><td>442</td><td>0.871041</td><td>0.128959</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>ท่าสุด</td><td>เมืองเชียงราย</td><td>4280</td><td>629</td><td>4909</td><td>0.871868</td><td>0.128132</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>ปราสาททนง</td><td>ปราสาท</td><td>5039</td><td>740</td><td>5779</td><td>0.87195</td><td>0.12805</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>ป่าแป๋</td><td>แม่สะเรียง</td><td>1278</td><td>181</td><td>1459</td><td>0.875942</td><td>0.124058</td><td>1</td></tr>
+<tr><td>แพร่</td><td>เวียงต้า</td><td>ลอง</td><td>1810</td><td>256</td><td>2066</td><td>0.876089</td><td>0.123911</td><td>1</td></tr>
+<tr><td>แพร่</td><td>ปากกาง</td><td>ลอง</td><td>23700</td><td>3269</td><td>26969</td><td>0.878787</td><td>0.121213</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>ปางมะผ้า</td><td>ปางมะผ้า</td><td>1644</td><td>225</td><td>1869</td><td>0.879615</td><td>0.120385</td><td>1</td></tr>
+<tr><td>พิจิตร</td><td>ท่าฬ่อ</td><td>เมืองพิจิตร</td><td>4116</td><td>548</td><td>4664</td><td>0.882504</td><td>0.117496</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>แม่สลองนอก</td><td>แม่ฟ้าหลวง</td><td>2937</td><td>389</td><td>3326</td><td>0.883043</td><td>0.116957</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>ยะลา</td><td>เมืองยะลา</td><td>12930</td><td>1685</td><td>14615</td><td>0.884707</td><td>0.115293</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>ปางหมู</td><td>เมืองแม่ฮ่องสอน</td><td>39835</td><td>5171</td><td>45006</td><td>0.885104</td><td>0.114896</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>แกใหญ่</td><td>เมืองสุรินทร์</td><td>2623</td><td>340</td><td>2963</td><td>0.885251</td><td>0.114749</td><td>1</td></tr>
+<tr><td>สตูล</td><td>เกาะสาหร่าย</td><td>เมืองสตูล</td><td>288018</td><td>36589</td><td>324607</td><td>0.887282</td><td>0.112718</td><td>1</td></tr>
+<tr><td>สมุทรสงคราม</td><td>ท่าคา</td><td>อัมพวา</td><td>2203</td><td>276</td><td>2479</td><td>0.888665</td><td>0.111335</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>บ้านแร่</td><td>เขวาสินรินทร์</td><td>8322</td><td>985</td><td>9307</td><td>0.894166</td><td>0.105834</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>ห้วยแก้ว</td><td>ห้วยแก้ว</td><td>1913</td><td>226</td><td>2139</td><td>0.894343</td><td>0.105657</td><td>1</td></tr>
+<tr><td>นครพนม</td><td>หนองญาติ</td><td>เมืองนครพนม</td><td>12371</td><td>1409</td><td>13780</td><td>0.89775</td><td>0.10225</td><td>1</td></tr>
+<tr><td>อุตรดิตถ์</td><td>ทุ่งยั้ง</td><td>ลับแล</td><td>40734</td><td>4579</td><td>45313</td><td>0.898947</td><td>0.101053</td><td>1</td></tr>
+<tr><td>สตูล</td><td>ทุ่งหว้า</td><td>ทุ่งหว้า</td><td>6841</td><td>761</td><td>7602</td><td>0.899895</td><td>0.100105</td><td>1</td></tr>
+<tr><td>สุรินทร์</td><td>เมืองที</td><td>เมืองสุรินทร์</td><td>6187</td><td>680</td><td>6867</td><td>0.900976</td><td>0.099024</td><td>1</td></tr>
+<tr><td>น่าน</td><td>ทุ่งช้าง</td><td>ทุ่งช้าง</td><td>35897</td><td>3879</td><td>39776</td><td>0.902479</td><td>0.097521</td><td>1</td></tr>
+<tr><td>พะเยา</td><td>ทุ่งกล้วย</td><td>ภูซาง</td><td>9194</td><td>989</td><td>10183</td><td>0.902877</td><td>0.097123</td><td>1</td></tr>
+<tr><td>แพร่</td><td>สวนเขื่อน</td><td>เมืองแพร่</td><td>3436</td><td>361</td><td>3797</td><td>0.904925</td><td>0.095075</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>หน้าถ้ำ</td><td>เมืองยะลา</td><td>16286</td><td>1697</td><td>17983</td><td>0.905633</td><td>0.094367</td><td>1</td></tr>
+<tr><td>ประจวบคีรีขันธ์</td><td>บางสะพาน</td><td>บางสะพานน้อย</td><td>30555</td><td>3029</td><td>33584</td><td>0.909808</td><td>0.090192</td><td>1</td></tr>
+<tr><td>นครนายก</td><td>หินตั้ง</td><td>เมืองนครนายก</td><td>16872</td><td>1633</td><td>18505</td><td>0.911754</td><td>0.088246</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>ถ้ำลอด</td><td>ปางมะผ้า</td><td>6871</td><td>665</td><td>7536</td><td>0.911757</td><td>0.088243</td><td>1</td></tr>
+<tr><td>สุราษฎร์ธานี</td><td>บางใบไม้</td><td>เมืองสุราษฎร์ธานี</td><td>6917</td><td>657</td><td>7574</td><td>0.913256</td><td>0.086744</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>วาวี</td><td>แม่สรวย</td><td>1913</td><td>173</td><td>2086</td><td>0.917066</td><td>0.082934</td><td>1</td></tr>
+<tr><td>ลำพูน</td><td>ศรีบัวบาน</td><td>เมืองลำพูน</td><td>11599</td><td>1038</td><td>12637</td><td>0.91786</td><td>0.08214</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>บ้านโป่ง</td><td>เวียงป่าเป้า</td><td>3263</td><td>286</td><td>3549</td><td>0.919414</td><td>0.080586</td><td>1</td></tr>
+<tr><td>แพร่</td><td>แม่ป้าก</td><td>วังชิ้น</td><td>5198</td><td>440</td><td>5638</td><td>0.921958</td><td>0.078042</td><td>1</td></tr>
+<tr><td>ลำพูน</td><td>ศรีวิชัย</td><td>ลี้</td><td>11117</td><td>932</td><td>12049</td><td>0.922649</td><td>0.077351</td><td>1</td></tr>
+<tr><td>พะเยา</td><td>ลอ</td><td>จุน</td><td>5348</td><td>441</td><td>5789</td><td>0.923821</td><td>0.076179</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>แม่เจดีย์ใหม่</td><td>เวียงป่าเป้า</td><td>3126</td><td>256</td><td>3382</td><td>0.924305</td><td>0.075695</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>เชียงดาว</td><td>เชียงดาว</td><td>1088</td><td>87</td><td>1175</td><td>0.925957</td><td>0.074043</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>ปางหมู</td><td>เมืองแม่ฮ่องสอน</td><td>6917</td><td>551</td><td>7468</td><td>0.926219</td><td>0.073781</td><td>1</td></tr>
+<tr><td>กระบี่</td><td>คลองประสงค์</td><td>เมืองกระบี่</td><td>1280</td><td>101</td><td>1381</td><td>0.926865</td><td>0.073135</td><td>1</td></tr>
+<tr><td>พะเยา</td><td>ดงเจน</td><td>ภูกามยาว</td><td>14102</td><td>1035</td><td>15137</td><td>0.931624</td><td>0.068376</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>ตาเนาะแมเราะ</td><td>เบตง</td><td>3152</td><td>227</td><td>3379</td><td>0.93282</td><td>0.06718</td><td>1</td></tr>
+<tr><td>ภูเก็ต</td><td>ไม้ขาว</td><td>ถลาง</td><td>84</td><td>6</td><td>90</td><td>0.933333</td><td>0.066667</td><td>1</td></tr>
+<tr><td>อุตรดิตถ์</td><td>บ้านด่านนาขาม</td><td>เมืองอุตรดิตถ์</td><td>30797</td><td>2147</td><td>32944</td><td>0.934829</td><td>0.065171</td><td>1</td></tr>
+<tr><td>อุตรดิตถ์</td><td>คุ้งตะเภา</td><td>เมืองอุตรดิตถ์</td><td>43143</td><td>2922</td><td>46065</td><td>0.936568</td><td>0.063432</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>ผาบ่อง</td><td>เมืองแม่ฮ่องสอน</td><td>1625</td><td>109</td><td>1734</td><td>0.93714</td><td>0.06286</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>วาวี</td><td>แม่สรวย</td><td>3331</td><td>218</td><td>3549</td><td>0.938574</td><td>0.061426</td><td>1</td></tr>
+<tr><td>เพชรบุรี</td><td>สะพานไกร</td><td>บ้านลาด</td><td>4867</td><td>316</td><td>5183</td><td>0.939031</td><td>0.060969</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>บ้านหลวง</td><td>จอมทอง</td><td>5018</td><td>304</td><td>5322</td><td>0.942879</td><td>0.057121</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>บ้านหลวง</td><td>จอมทอง</td><td>2379</td><td>143</td><td>2522</td><td>0.943299</td><td>0.056701</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>แม่ยาว</td><td>เมืองเชียงราย</td><td>7595</td><td>455</td><td>8050</td><td>0.943478</td><td>0.056522</td><td>1</td></tr>
+<tr><td>พังงา</td><td>ท้ายเหมือง</td><td>ท้ายเหมือง</td><td>5291</td><td>289</td><td>5580</td><td>0.948208</td><td>0.051792</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>ม่อนปิ่น</td><td>ฝาง</td><td>3118</td><td>160</td><td>3278</td><td>0.95119</td><td>0.04881</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>กองแขก</td><td>แม่แจ่ม</td><td>1993</td><td>99</td><td>2092</td><td>0.952677</td><td>0.047323</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>ห้วยห้อม</td><td>แม่ลาน้อย</td><td>2659</td><td>127</td><td>2786</td><td>0.954415</td><td>0.045585</td><td>1</td></tr>
+<tr><td>พัทลุง</td><td>จองถนน</td><td>เขาชัยสน</td><td>927</td><td>44</td><td>971</td><td>0.954686</td><td>0.045314</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>แม่สลองใน</td><td>แม่ฟ้าหลวง</td><td>6937</td><td>325</td><td>7262</td><td>0.955246</td><td>0.044754</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>เทพเสด็จ</td><td>ดอยสะเก็ด</td><td>799</td><td>21</td><td>820</td><td>0.97439</td><td>0.02561</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>บ้านแหร</td><td>ธารโต</td><td>6901</td><td>178</td><td>7079</td><td>0.974855</td><td>0.025145</td><td>1</td></tr>
+<tr><td>เชียงใหม่</td><td>เชียงดาว</td><td>เชียงดาว</td><td>6658</td><td>165</td><td>6823</td><td>0.975817</td><td>0.024183</td><td>1</td></tr>
+<tr><td>ยะลา</td><td>ยะลา</td><td>เมืองยะลา</td><td>1575</td><td>33</td><td>1608</td><td>0.979478</td><td>0.020522</td><td>1</td></tr>
+<tr><td>อุทัยธานี</td><td>เจ้าวัด</td><td>บ้านไร่</td><td>2753</td><td>52</td><td>2805</td><td>0.981462</td><td>0.018538</td><td>1</td></tr>
+<tr><td>กระบี่</td><td>ศาลาด่าน</td><td>เกาะลันตา</td><td>64</td><td>1</td><td>65</td><td>0.984615</td><td>0.015385</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>บ้านโป่ง</td><td>เวียงป่าเป้า</td><td>4442</td><td>38</td><td>4480</td><td>0.991518</td><td>0.008482</td><td>1</td></tr>
+<tr><td>เชียงราย</td><td>ดอยฮาง</td><td>เมืองเชียงราย</td><td>10261</td><td>84</td><td>10345</td><td>0.99188</td><td>0.00812</td><td>1</td></tr>
+<tr><td>แม่ฮ่องสอน</td><td>ห้วยปูลิง</td><td>เมืองแม่ฮ่องสอน</td><td>804</td><td>5</td><td>809</td><td>0.99382</td><td>0.00618</td><td>1</td></tr>
+<tr><td>พังงา</td><td>ท้ายเหมือง</td><td>ท้ายเหมือง</td><td>2097</td><td>12</td><td>2109</td><td>0.99431</td><td>0.00569</td><td>1</td></tr>
+<tr><td>กระบี่</td><td>ปกาสัย</td><td>เหนือคลอง</td><td>2983</td><td>10</td><td>2993</td><td>0.996659</td><td>0.003341</td><td>1</td></tr>
+<tr><td>นราธิวาส</td><td>ลุโบะสาวอ</td><td>บาเจาะ</td><td>9</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+
+  </table>
+  <footer class="container-fluid bg-4 text-center">
+    <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+  </footer>
+
+</center>
+</body>
+</html>

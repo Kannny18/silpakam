@@ -1,0 +1,330 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>พื้นที่สีเขียวเเละย่านศิลปกรรม</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    
+    
+  
+  <style>
+    body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+    }
+    h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }  
+    .jumbotron {
+      background-color: #043cf5;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+    }
+    .container-fluid {
+      background-color: #ebe3fd;
+      color: #000000;
+      padding: 100px 25px;
+     
+   
+
+    }
+    
+    .bg-grey {
+      background-color: #ffe1e1;
+    }
+    .logo-small {
+      color: #3b67f5;
+      font-size: 50px;
+    }
+    .logo {
+      color: #e6eaf0;
+      font-size: 200px;
+    }
+    .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+    }
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+    }
+    .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #1ec9f4;
+    }
+    .carousel-indicators li {
+      border-color: #f4511e;
+    }
+    .carousel-indicators li.active {
+      background-color: #f4511e;
+    }
+    .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+    }
+    .item span {
+      font-style: normal;
+    }
+    .panel {
+      border: 1px solid #f4511e; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+    }
+    .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+    }
+    .panel-footer .btn:hover {
+      border: 1px solid #f4511e;
+      background-color: #fff !important;
+      color: #f4511e;
+    }
+    .panel-heading {
+      color: #fff !important;
+      background-color: #f4511e !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+    .panel-footer {
+      background-color: white !important;
+    }
+    .panel-footer h3 {
+      font-size: 32px;
+    }
+    .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+    }
+    .container-fluid bg-4 text-center {
+      margin: 15px 0;
+      background-color: #1a82e2;
+      color: #fff;
+    }
+    .navbar {
+      margin-bottom: 0;
+      background-color: #87bcee;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+    }
+    .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+    }
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #f4511e !important;
+      background-color: #fff !important;
+    }
+    .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+    }
+    footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #f4511e;
+    }
+    .bg-4 { 
+      background-color: #2b2529; /* Black Gray */
+      color: #f5f4f4;
+    }
+    .slideanim {visibility:hidden;}
+    .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+    }
+    @keyframes slide {
+      0% {
+        opacity: 0;
+        transform: translateY(70%);
+      } 
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+    @-webkit-keyframes slide {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+      } 
+      100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+      .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .logo {
+        font-size: 150px;
+      }
+    }
+    </style>
+
+</head>
+</html> 
+
+<!-- <body bgcolor="BFACE2">
+    <h1 id="heading"><b><i>PHI THA KHON</i></b></h1>
+    <br>
+    <p>Dan sai District Loei Province</p>
+    <hr>
+</body> --> 
+
+<body>
+  <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="self.html">Home</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="5.html">เเหล่งศิลปกรรมเเละย่านชุมชมเก่า</a></li>
+            <li><a href="6.html">เเหล่งศิลปกรรม</a></li>
+            <li><a href="Greentable.html">พื้นที่สีเขียวทั้งประเทศไทย</a></li>
+            <li><a href="Created.html">ข้อมูลติดต่อ</a></li>
+      
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="jumbotron text-center">
+      <h1>พื้นที่สีเขียวเเละย่านศิลปกรรม</h1>
+      <p>สํานักงานนโยบายและแผนทรัพยากรธรรมชาติและสิ่งแวดล้อม</p> 
+    </div>
+    
+
+          <div class="container">
+            <h2>พื้นที่สีเขียว</h2>
+            <p>พื้นที่สีเขียว (green space) หมายถึง พื้นที่กลางแจ้ง และกึ่งกลางแจ้งที่มีขอบเขตที่ดินทั้งหมดหรือบางส่วนปกคลุมด้วยพรรณพืชบนดินที่ซึมน้ำได้หรืออาจมีสิ่งก่อสร้างอยู่ด้วย ทั้งในพื้นที่สีเขียวในเขตเมืองและนอกเขตเมือง อาจเป็นพื้นที่สาธารณะหรือเอกชนที่สาธารณชนสามารถเข้าไปใช้ประโยชน์ได้ ประกอบด้วยพื้นที่สีเขียวเพื่อนันทนาการและความงามทางภูมิทัศน์ พื้นที่อรรถประโยชน์ เช่น พื้นที่เกษตรกรรมและพื้นที่สาธารณูปการ พื้นที่แนวกันชน พื้นที่สีเขียวในสถาบันต่างๆ พื้นที่ธรรมชาติและกึ่งธรรมชาติอันเป็นถิ่นที่อยู่ของสิ่งมีชีวิต ได้แก่ พื้นที่ป่าไม้ พื้นที่ชุ่มน้ำ รวมถึงพื้นที่ชายหาด พื้นที่ริมน้ำ พื้นที่ที่เป็นริ้วยาวตามแนวเส้นทางคมนาคมทางบก ทางน้ำ และแนวสาธารณูปการต่างๆ หรือพื้นที่อื่นๆ เช่น พื้นที่สีเขียวที่ปล่อยรกร้าง พื้นที่สีเขียวที่ถูกรบกวนสภาพธรรมชาติ และพื้นที่สีเขียวที่มีการใช้ประโยชน์ผสมผสานกัน (สำนักงานนโยบายและแผนทรัพยากรธรรมชาติและสิ่งแวดล้อม กระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม [สผ.ทส.], 2548)</p>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="https://citycracker.co/wp-content/uploads/2020/07/bigstock-Beautiful-Morning-Light-In-Pub-89324489.jpg" target="_blank">
+                    <img src="https://citycracker.co/wp-content/uploads/2020/07/bigstock-Beautiful-Morning-Light-In-Pub-89324489.jpg" alt="Lights" style="width:100%">
+                    <div class="caption">
+                      <center><p>พื้นที่สีเขียวสาธารณะ</p></center>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="https://www.aroundonline.com/wp-content/uploads/2020/02/6x8-3.jpg" target="_blank">
+                    <img src="https://www.aroundonline.com/wp-content/uploads/2020/02/6x8-3.jpg" alt="Nature" style="width:100%">
+                    <div class="caption">
+                      <center><p>พื้นที่สีเขียวในเขตเมืองและนอกเขตเมือง </p></center>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="https://www.aroundonline.com/wp-content/uploads/2020/02/cover4.jpg" target="_blank">
+                    <img src="https://www.aroundonline.com/wp-content/uploads/2020/02/cover4.jpg" alt="Fjords" style="width:100%">
+                    <div class="caption">
+                     <center><p>พื้นที่สีเขียวในเขตเมืองและนอกเขตเมือง </p></center>
+                    </div>
+                  </a>
+                </div>
+            
+              </div>
+            </div>
+            <!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      
+  
+        <h2>เเหล่งศิลปกรรม</h2>
+        <p>เเหล่งศิลปกรรม หมายถึง พื้นที่หรือบริเวณพื้นที่ที่ประกอบด้วยอาคาร สิ่งปลูกสร้างที่มนุษย์สร้างขึ้น หรือประดิษฐ์ขึ้นในเเต่ละยุคสมัย จำเเนกเป็น 2  ลักษณะ คือเเหล่งศิลปกรรมที่ยังใช้งาน เเละเเหล่งศิลปกรรมที่ไม่ได้ใช้งาน</p>
+      <h2>การจัดประเภทเเหล่งศิลปกรรม</h2>
+      <p>อนุเสาวรีย์ อนุสรณ์สถาน สถานหลังเมือง , วัด วัดร้าง ศาสนสถาน , พิพิธภัณฑ์ สถาปัตยกรรม พระราชวัง, เเหล่งโบราณคดีทั้งที่ขุนค้นเเล้วเเละยังไม่ได้ขุดค้น โบราณวัตถุ เตาเผาโบราณ , ชุมชนโบราณ เมืองโบราณ อุทยานประวัติศาสตร์ , เมืองเก่า เมืองประวัติศาสตร์ , ย่านชุมชนเก่า </p>
+    
+     
+    </div>
+    <div class="col-sm-4">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/0004932_-_%28Phra_Pathom_Chedi_-_001%29.jpg" alt="Fjords" style="width:100%">
+      
+    </div>
+    
+  </div>
+</div>
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+      <!--       <div class="box2">
+        <h2>Island</h2>
+      </div>
+      <div class="box3">
+        <h2>Mountain</h2>
+      </div>
+      <div class="box4">
+        <h2>Scenery</h2>
+      </div> -->
+    </div>
+  </div>
+
+</div>
+<footer class="container-fluid bg-4 text-center">
+  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+</footer>
